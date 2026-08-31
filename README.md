@@ -72,8 +72,23 @@ Todas as páginas compartilham:
 - `assets/logo-correa-sales.png` — logo original em alta (1024px)
 - `assets/logo-light-bg.png` — variante para uso em headers claros
 - `assets/logo-dark-bg.png` — variante para uso em footers escuros
-- `assets/styles.css` — 763 linhas de CSS
+- `assets/styles.css` — folha de estilos global
 - `assets/script.js` — comportamento do drawer mobile
+- `assets/blog/` — 7 fotos editoriais (2K) usadas no blog:
+  - `lc-214-2025.jpg` — post destaque (Reforma Tributária)
+  - `simples-vs-regime.jpg` — Simples Nacional × regime regular
+  - `cronograma-2026-2033.jpg` — transição ano a ano
+  - `split-payment.jpg` — pagamento fatiado
+  - `prestadores-servico.jpg` — impacto para serviços
+  - `comercio-varejo.jpg` — varejo e cesta básica
+  - `mei-reforma.jpg` — MEI na reforma
+
+## Dados da empresa (já preenchidos)
+- **CNPJ:** 34.198.102/0001-85
+- **E-mail de contato:** diego@correasalesassessoria.com.br
+- **Telefone/WhatsApp:** (21) 98439-5779
+- **Endereço:** Av. Marechal Câmara, 160 — Sala 931, Centro, Rio de Janeiro — RJ
+
 
 ## Fontes externas usadas neste conteúdo
 O blog cita fontes oficiais reais nos artigos sobre Reforma Tributária:

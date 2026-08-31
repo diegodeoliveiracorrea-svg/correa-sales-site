@@ -16,7 +16,7 @@
 <header class="site-header">
   <div class="header-inner">
     <a href="index.html" class="logo" aria-label="Correa Sales — Início">
-      <img class="logo-on-light" src="assets/logo-light-bg.png" alt="Corrêa Sales Assessoria Contábil" /><img class="logo-on-dark" src="assets/logo-dark-bg.png" alt="Corrêa Sales Assessoria Contábil" />
+      <img class="logo-on-light" src="assets/logo-light-bg.png" alt="Corrêa Sales Assessoria Contábil"/><img class="logo-on-dark" src="assets/logo-dark-bg.png" alt="Corrêa Sales Assessoria Contábil"/>
     </a>
     <nav class="nav" aria-label="Principal">
       <a href="index.html" class="active">Início</a>
@@ -37,7 +37,7 @@
 <div class="mobile-drawer" aria-hidden="true">
   <div class="drawer-head">
     <a href="index.html" class="logo">
-      <img class="logo-on-light" src="assets/logo-light-bg.png" alt="Corrêa Sales Assessoria Contábil" /><img class="logo-on-dark" src="assets/logo-dark-bg.png" alt="Corrêa Sales Assessoria Contábil" />
+      <img class="logo-on-light" src="assets/logo-light-bg.png" alt="Corrêa Sales Assessoria Contábil"/><img class="logo-on-dark" src="assets/logo-dark-bg.png" alt="Corrêa Sales Assessoria Contábil"/>
     </a>
     <button class="drawer-close" aria-label="Fechar menu">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="22" height="22"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg>
@@ -258,7 +258,7 @@
     <div class="footer-grid">
       <div class="footer-col footer-brand">
         <a href="index.html" class="logo">
-          <img class="logo-on-light" src="assets/logo-light-bg.png" alt="Corrêa Sales Assessoria Contábil" /><img class="logo-on-dark" src="assets/logo-dark-bg.png" alt="Corrêa Sales Assessoria Contábil" />
+          <img class="logo-on-light" src="assets/logo-light-bg.png" alt="Corrêa Sales Assessoria Contábil"/><img class="logo-on-dark" src="assets/logo-dark-bg.png" alt="Corrêa Sales Assessoria Contábil"/>
         </a>
         <p>Contabilidade consultiva e assessoria financeira para pequenas e médias empresas em todo o Brasil.</p>
         <div class="socials">
@@ -281,7 +281,7 @@
         <h5>Contato</h5>
         <ul>
           <li>Av. Rio Branco, 156 — 18º andar<br/>Centro, Rio de Janeiro — RJ</li>
-          <li><a href="/cdn-cgi/l/email-protection#1f7c70716b7e6b705f7c706d6d7a7e6c7e737a6c317c7072317d6d"><span class="__cf_email__" data-cfemail="dfbcb0b1abbeabb09fbcb0adadbabeacbeb3baacf1bcb0b2f1bdad">[email&#160;protected]</span></a></li>
+          <li><a class="js-email" data-u="diego" data-d="correasalesassessoria.com.br" href="#">contato por e-mail</a></li>
           <li><a href="tel:+552133339999">+55 (21) 3333-9999</a></li>
           <li>Seg. a sex. — 9h às 18h</li>
         </ul>
@@ -297,7 +297,7 @@
       </div>
     </div>
     <div class="footer-bottom">
-      <div>© 2026 Correa Sales Assessoria Contábil Ltda. — CNPJ 00.000.000/0001-00 • CRC-RJ 000000/O-0</div>
+      <div>© 2026 Correa Sales Assessoria Contábil Ltda. — CNPJ 34.198.102/0001-85</div>
       <div><a href="#">Política de privacidade</a> · <a href="#">Termos de uso</a></div>
     </div>
   </div>
@@ -308,6 +308,17 @@
   <svg viewBox="0 0 32 32" fill="currentColor"><path d="M16 3C9 3 3.5 8.5 3.5 15.5c0 2.4.7 4.7 1.9 6.7L3 29l7-1.8c1.9 1 4 1.6 6 1.6C23 28.8 28.5 23.3 28.5 16.3S23 3 16 3zm0 23.3c-1.8 0-3.5-.5-5-1.3l-.4-.2-4.1 1.1 1.1-4-.3-.4c-1-1.6-1.5-3.4-1.5-5.3C5.8 9.6 10.4 5 16 5s10.2 4.6 10.2 10.3-4.6 11-10.2 11zm5.6-7.7c-.3-.2-1.8-.9-2.1-1s-.5-.2-.7.2c-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.2-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.5-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5s-.7-1.7-1-2.4c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4s-1 1-1 2.4 1 2.8 1.2 3c.1.2 2.1 3.2 5 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.3-.7.3-1.3.2-1.4-.1-.2-.3-.3-.6-.4z"/></svg>
 </a>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="assets/script.js"></script>
+<script src="assets/script.js"></script>
+<script>
+// Constrói mailtos via JS (evita ofuscação automática do proxy CF)
+document.addEventListener('DOMContentLoaded', function(){
+  var u = 'diego', d = 'correasalesassessoria.com.br';
+  var addr = u + '@' + d;
+  document.querySelectorAll('a.js-email').forEach(function(a){
+    a.href = 'mailto:' + addr;
+    a.textContent = addr;
+  });
+});
+</script>
 </body>
 </html>

@@ -760,3 +760,7 @@ html.js-reveal .reveal.in {
 .mt-sm { margin-top: 16px; }
 .hide-mobile { }
 @media (max-width: 640px) { .hide-mobile { display: none; } }
+
+
+/* Photo replacement for placeholders */
+.img-photo { display:block; width:100%; height:auto; object-fit:cover; border-radius:var(--radius); border:1px solid var(--border); }

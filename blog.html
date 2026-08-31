@@ -1,14 +1,14 @@
 <!doctype html>
 <html lang="pt-BR">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>Blog — Reforma Tributária para PMEs | Corrêa Sales Assessoria Contábil</title>
-<meta name="description" content="Análises, guias e atualizações sobre a Reforma Tributária (LC 214/2025) para micro, pequenas e médias empresas — sempre com dados oficiais e fontes citadas." />
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="assets/styles.css" />
+<meta name="description" content="Análises, guias e atualizações sobre a Reforma Tributária (LC 214/2025) para micro, pequenas e médias empresas — sempre com dados oficiais e fontes citadas."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="assets/styles.css"/>
 <style>
   /* Blog-specific extensions to the site design system */
   .blog-tags { display:flex; flex-wrap:wrap; gap:10px; justify-content:center; margin-bottom:56px; }
@@ -129,13 +129,18 @@
   .newsletter-inline button { padding:14px 24px; background:var(--gold); color:var(--white); border-radius:var(--radius-sm); font-weight:500; }
   .newsletter-inline button:hover { background:var(--gold-3); }
   @media (max-width:640px){ .newsletter-inline form { flex-direction:column; } .newsletter-inline { padding:48px 24px; } }
-</style>
+
+  /* Blog photos (substituem os antigos img-ph) */
+  .featured .img-photo { aspect-ratio:4/3; width:100%; height:auto; object-fit:cover; border-radius:var(--radius); border:1px solid var(--border); display:block; }
+  .post-card .img-photo { aspect-ratio:16/10; width:100%; height:auto; object-fit:cover; display:block; }
+
+  </style>
 </head>
 <body data-screen-label="Blog">
 
 <header class="site-header">
   <div class="header-inner">
-    <a href="index.html" class="logo"><img class="logo-on-light" src="assets/logo-light-bg.png" alt="Corrêa Sales Assessoria Contábil" /><img class="logo-on-dark" src="assets/logo-dark-bg.png" alt="Corrêa Sales Assessoria Contábil" /></a>
+    <a href="index.html" class="logo"><img class="logo-on-light" src="assets/logo-light-bg.png" alt="Corrêa Sales Assessoria Contábil"/><img class="logo-on-dark" src="assets/logo-dark-bg.png" alt="Corrêa Sales Assessoria Contábil"/></a>
     <nav class="nav">
       <a href="index.html">Início</a>
       <a href="sobre.html">Sobre</a>
@@ -152,7 +157,7 @@
 
 <div class="mobile-drawer">
   <div class="drawer-head">
-    <a href="index.html" class="logo"><img class="logo-on-light" src="assets/logo-light-bg.png" alt="Corrêa Sales Assessoria Contábil" /><img class="logo-on-dark" src="assets/logo-dark-bg.png" alt="Corrêa Sales Assessoria Contábil" /></a>
+    <a href="index.html" class="logo"><img class="logo-on-light" src="assets/logo-light-bg.png" alt="Corrêa Sales Assessoria Contábil"/><img class="logo-on-dark" src="assets/logo-dark-bg.png" alt="Corrêa Sales Assessoria Contábil"/></a>
     <button class="drawer-close" aria-label="Fechar menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="22" height="22"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg></button>
   </div>
   <nav class="drawer-nav">
@@ -189,7 +194,7 @@
 
     <!-- ============== FEATURED ============== -->
     <article class="featured reveal">
-      <div class="img-ph" data-label="[ Sanção da LC 214/2025 — reforma tributária ]"></div>
+      <img class="img-photo" src="assets/blog/lc-214-2025.jpg" alt="Documento da Reforma Tributária LC 214/2025" loading="lazy"/>
       <div>
         <div class="meta">Destaque · Reforma Tributária · 9 min de leitura</div>
         <h2>LC 214/2025: o que a Reforma Tributária realmente muda para a sua PME</h2>
@@ -230,7 +235,7 @@
 
       <!-- POST 1 — Simples Nacional dentro da reforma -->
       <article class="card post-card">
-        <div class="img-ph" data-label="[ Simples Nacional × regime regular ]"></div>
+        <img class="img-photo" src="assets/blog/simples-vs-regime.jpg" alt="Comparação Simples Nacional × regime regular" loading="lazy"/>
         <div class="body">
           <div class="meta">Simples Nacional · 7 min</div>
           <h4>Simples Nacional na Reforma: a "escolha do crédito" que sua PME precisa fazer</h4>
@@ -241,7 +246,7 @@
 
       <!-- POST 2 — Cronograma detalhado -->
       <article class="card post-card">
-        <div class="img-ph" data-label="[ Cronograma de transição 2026–2033 ]"></div>
+        <img class="img-photo" src="assets/blog/cronograma-2026-2033.jpg" alt="Cronograma da transição tributária 2026 a 2033" loading="lazy"/>
         <div class="body">
           <div class="meta">Transição · 6 min</div>
           <h4>2026 a 2033: o cronograma real da transição, ano a ano</h4>
@@ -252,7 +257,7 @@
 
       <!-- POST 3 — Split payment -->
       <article class="card post-card">
-        <div class="img-ph" data-label="[ Split payment — cashback e conformidade ]"></div>
+        <img class="img-photo" src="assets/blog/split-payment.jpg" alt="Split payment — pagamento fatiado" loading="lazy"/>
         <div class="body">
           <div class="meta">IBS &amp; CBS · 8 min</div>
           <h4>Split payment: como o pagamento fatiado vai mudar o caixa da sua PME</h4>
@@ -263,7 +268,7 @@
 
       <!-- POST 4 — Setores específicos -->
       <article class="card post-card">
-        <div class="img-ph" data-label="[ Prestadores de serviço — impacto setorial ]"></div>
+        <img class="img-photo" src="assets/blog/prestadores-servico.jpg" alt="Impacto da reforma para prestadores de serviço" loading="lazy"/>
         <div class="body">
           <div class="meta">Setores · 8 min</div>
           <h4>Prestadores de serviço: por que a alíquota "sobe" — e o que fazer sobre isso</h4>
@@ -274,7 +279,7 @@
 
       <!-- POST 5 — Comércio e indústria -->
       <article class="card post-card">
-        <div class="img-ph" data-label="[ Comércio varejista e cesta básica ]"></div>
+        <img class="img-photo" src="assets/blog/comercio-varejo.jpg" alt="Comércio varejista e cesta básica" loading="lazy"/>
         <div class="body">
           <div class="meta">Setores · 6 min</div>
           <h4>Comércio varejista: cesta básica zerada e cashback para famílias de baixa renda</h4>
@@ -285,7 +290,7 @@
 
       <!-- POST 6 — MEI -->
       <article class="card post-card">
-        <div class="img-ph" data-label="[ MEI e a reforma tributária ]"></div>
+        <img class="img-photo" src="assets/blog/mei-reforma.jpg" alt="MEI e a reforma tributária" loading="lazy"/>
         <div class="body">
           <div class="meta">MEI · 5 min</div>
           <h4>MEI na Reforma Tributária: o que muda (spoiler: quase nada) e o que fica igual</h4>
@@ -330,7 +335,7 @@
         <h3>Guia da Reforma Tributária para PMEs — grátis</h3>
         <p>Assine nossa newsletter e receba um resumo mensal das atualizações da LC 214/2025, mais checklists práticos para preparar a sua empresa para 2026, 2027 e a transição completa.</p>
         <form>
-          <input type="email" placeholder="Seu melhor e-mail" required aria-label="E-mail" />
+          <input type="email" placeholder="Seu melhor e-mail" required aria-label="E-mail"/>
           <button type="submit">Receber o guia</button>
         </form>
       </div>
@@ -360,7 +365,7 @@
   <div class="container">
     <div class="footer-grid">
       <div class="footer-col footer-brand">
-        <a href="index.html" class="logo"><img class="logo-on-light" src="assets/logo-light-bg.png" alt="Corrêa Sales Assessoria Contábil" /><img class="logo-on-dark" src="assets/logo-dark-bg.png" alt="Corrêa Sales Assessoria Contábil" /></a>
+        <a href="index.html" class="logo"><img class="logo-on-light" src="assets/logo-light-bg.png" alt="Corrêa Sales Assessoria Contábil"/><img class="logo-on-dark" src="assets/logo-dark-bg.png" alt="Corrêa Sales Assessoria Contábil"/></a>
         <p>Contabilidade consultiva e assessoria financeira para pequenas e médias empresas em todo o Brasil.</p>
         <div class="socials">
           <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93a1.65 1.65 0 00-1.53 1.11c-.02.06-.05.19-.05.32V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"/></svg></a>
@@ -376,7 +381,7 @@
         <h5>Contato</h5>
         <ul>
           <li>Av. Rio Branco, 156 — 18º andar<br/>Centro, Rio de Janeiro — RJ</li>
-          <li><a href="mailto:contato@correasales.com.br">contato@correasales.com.br</a></li>
+          <li><a class="js-email" data-u="diego" data-d="correasalesassessoria.com.br" href="#">contato por e-mail</a></li>
           <li><a href="tel:+552133339999">+55 (21) 3333-9999</a></li>
           <li>Seg. a sex. — 9h às 18h</li>
         </ul>
@@ -384,12 +389,12 @@
       <div class="footer-col newsletter">
         <h5>Newsletter fiscal</h5>
         <p style="margin-bottom:14px">Receba mensalmente atualizações tributárias e dicas de gestão financeira.</p>
-        <form><input type="email" placeholder="Seu e-mail corporativo" required /><button type="submit">Inscrever</button></form>
+        <form><input type="email" placeholder="Seu e-mail corporativo" required/><button type="submit">Inscrever</button></form>
         <p>Sem spam. Cancele quando quiser.</p>
       </div>
     </div>
     <div class="footer-bottom">
-      <div>© 2026 Corrêa Sales Assessoria Contábil Ltda. — CNPJ 00.000.000/0001-00 • CRC-RJ 000000/O-0</div>
+      <div>© 2026 Corrêa Sales Assessoria Contábil Ltda. — CNPJ 34.198.102/0001-85</div>
       <div><a href="#">Política de privacidade</a> · <a href="#">Termos de uso</a></div>
     </div>
   </div>
@@ -400,5 +405,16 @@
 </a>
 
 <script src="assets/script.js"></script>
+<script>
+// Constrói mailtos via JS (evita ofuscação automática do proxy CF)
+document.addEventListener('DOMContentLoaded', function(){
+  var u = 'diego', d = 'correasalesassessoria.com.br';
+  var addr = u + '@' + d;
+  document.querySelectorAll('a.js-email').forEach(function(a){
+    a.href = 'mailto:' + addr;
+    a.textContent = addr;
+  });
+});
+</script>
 </body>
 </html>
