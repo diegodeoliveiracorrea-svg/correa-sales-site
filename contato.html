@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Contato — Fale com um especialista | Correa Sales</title>
+<meta name="description" content="Agende uma consultoria gratuita ou fale com nosso time. Escritório no Rio de Janeiro, atendimento em todo o Brasil."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="assets/styles.css"/>
+<style>
+  .contact-layout { display:grid; grid-template-columns:1.3fr 1fr; gap:56px; align-items:flex-start; }
+  @media (max-width:900px){ .contact-layout { grid-template-columns:1fr; gap:40px; } }
+  .form-card { background:var(--white); border:1px solid var(--border); border-radius:var(--radius-lg); padding:48px; box-shadow:var(--shadow-sm); }
+  .form-card h2 { margin-bottom:8px; }
+  .form-card > p { color:var(--graphite); margin-bottom:32px; }
+  .form-grid { display:grid; grid-template-columns:1fr 1fr; gap:20px; }
+  .form-grid .full { grid-column:1/-1; }
+  @media (max-width:640px){ .form-grid { grid-template-columns:1fr; } }
+  .form-status { margin-top:20px; padding:14px 18px; background:rgba(176,138,87,0.1); color:var(--gold-3); border-left:3px solid var(--gold); border-radius:var(--radius-sm); font-size:0.92rem; display:none; }
+  .form-status.show { display:block; }
+  .info-block { padding:32px; background:var(--off); border-radius:var(--radius); margin-bottom:16px; }
+  .info-block h4 { margin-bottom:20px; }
+  .info-item { display:flex; gap:16px; padding:14px 0; border-bottom:1px solid var(--border); }
+  .info-item:last-child { border-bottom:0; padding-bottom:0; }
+  .info-item .icon-wrap { width:40px; height:40px; flex-shrink:0; display:grid; place-items:center; background:var(--white); border-radius:var(--radius-sm); color:var(--gold); border:1px solid var(--border-gold); }
+  .info-item .icon-wrap svg { width:18px; height:18px; }
+  .info-item .info-body strong { display:block; color:var(--navy); font-size:0.85rem; letter-spacing:0.08em; text-transform:uppercase; margin-bottom:4px; font-weight:600; }
+  .info-item .info-body a, .info-item .info-body span { color:var(--graphite); font-size:0.95rem; }
+  .info-item .info-body a:hover { color:var(--gold); }
+  .map-ph { aspect-ratio:16/6; margin-top:24px; }
+</style>
+</head>
+<body data-screen-label="Contato">
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="logo"><img class="logo-on-light" src="assets/logo-light-bg.png" alt="Corrêa Sales Assessoria Contábil" /><img class="logo-on-dark" src="assets/logo-dark-bg.png" alt="Corrêa Sales Assessoria Contábil" /></a>
+    <nav class="nav">
+      <a href="index.html">Início</a>
+      <a href="sobre.html">Sobre</a>
+      <a href="servicos.html">Serviços</a>
+      <a href="blog.html">Blog</a>
+      <a href="contato.html" class="active">Contato</a>
+    </nav>
+    <div class="header-cta">
+      <a href="contato.html" class="btn btn-primary">Consultoria gratuita</a>
+      <button class="menu-toggle" aria-label="Abrir menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg></button>
+    </div>
+  </div>
+</header>
+
+<div class="mobile-drawer">
+  <div class="drawer-head">
+    <a href="index.html" class="logo"><img class="logo-on-light" src="assets/logo-light-bg.png" alt="Corrêa Sales Assessoria Contábil" /><img class="logo-on-dark" src="assets/logo-dark-bg.png" alt="Corrêa Sales Assessoria Contábil" /></a>
+    <button class="drawer-close" aria-label="Fechar menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="22" height="22"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg></button>
+  </div>
+  <nav class="drawer-nav">
+    <a href="index.html">Início</a>
+    <a href="sobre.html">Sobre</a>
+    <a href="servicos.html">Serviços</a>
+    <a href="blog.html">Blog</a>
+    <a href="contato.html" class="active">Contato</a>
+  </nav>
+  <div class="drawer-cta"><a href="contato.html" class="btn btn-primary">Agendar consultoria gratuita</a></div>
+</div>
+
+<section class="hero-slim">
+  <div class="hero-inner-slim reveal">
+    <span class="eyebrow">Vamos conversar</span>
+    <h1>Comece com uma consultoria gratuita.</h1>
+    <p class="hero-sub">Preencha o formulário abaixo ou fale conosco pelo canal que preferir. Nosso time responde em até 1 dia útil.</p>
+  </div>
+</section>
+
+<section class="section" style="padding-top:24px">
+  <div class="container">
+    <div class="contact-layout reveal">
+      <!-- FORM -->
+      <div class="form-card">
+        <h2>Envie sua mensagem</h2>
+        <p>Conte um pouco sobre sua empresa e nosso especialista entra em contato.</p>
+        <form id="contact-form" novalidate>
+          <div class="form-grid">
+            <div class="form-field">
+              <label for="nome">Nome completo <span class="req">*</span></label>
+              <input type="text" id="nome" name="nome" required placeholder="Como podemos te chamar?"/>
+            </div>
+            <div class="form-field">
+              <label for="empresa">Empresa</label>
+              <input type="text" id="empresa" name="empresa" placeholder="Nome da sua empresa"/>
+            </div>
+            <div class="form-field">
+              <label for="email">E-mail <span class="req">*</span></label>
+              <input type="email" id="email" name="email" required placeholder="seu@email.com"/>
+            </div>
+            <div class="form-field">
+              <label for="telefone">Telefone / WhatsApp <span class="req">*</span></label>
+              <input type="tel" id="telefone" name="telefone" required placeholder="(21) 99999-9999"/>
+            </div>
+            <div class="form-field full">
+              <label for="servico">Qual serviço você procura? <span class="req">*</span></label>
+              <select id="servico" name="servico" required>
+                <option value="">Selecione uma opção</option>
+                <option value="contabilidade-consultiva">Contabilidade Consultiva</option>
+                <option value="fiscal-tributario">Fiscal e Tributário</option>
+                <option value="trabalhista">Departamento Trabalhista</option>
+                <option value="abertura-empresa">Abertura de Empresa</option>
+                <option value="bpo-financeiro">BPO Financeiro</option>
+                <option value="planejamento">Planejamento Estratégico</option>
+                <option value="auditoria">Auditoria Interna</option>
+                <option value="outro">Outro / Não sei ainda</option>
+              </select>
+            </div>
+            <div class="form-field full">
+              <label for="mensagem">Mensagem <span class="req">*</span></label>
+              <textarea id="mensagem" name="mensagem" required placeholder="Conte brevemente sobre sua empresa e o que você está buscando..."></textarea>
+            </div>
+            <div class="full">
+              <button type="submit" class="btn btn-primary btn-lg" style="width:100%">Enviar mensagem</button>
+              <div class="form-status" role="status"></div>
+              <p style="font-size:0.8rem; color:var(--graphite-2); margin-top:14px; text-align:center">Ao enviar, você concorda com nossa <a href="#" style="color:var(--gold)">política de privacidade</a>.</p>
+            </div>
+          </div>
+        </form>
+      </div>
+
+      <!-- INFO -->
+      <div>
+        <div class="info-block">
+          <h4>Fale conosco diretamente</h4>
+          <div class="info-item">
+            <div class="icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+            <div class="info-body"><strong>Endereço</strong><span>Av. Rio Branco, 156 — 18º andar<br/>Centro, Rio de Janeiro — RJ<br/>CEP 20040-901</span></div>
+          </div>
+          <div class="info-item">
+            <div class="icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
+            <div class="info-body"><strong>Telefone</strong><a href="tel:+552133339999">+55 (21) 3333-9999</a></div>
+          </div>
+          <div class="info-item">
+            <div class="icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+            <div class="info-body"><strong>E-mail</strong><a href="/cdn-cgi/l/email-protection#c3a0acadb7a2b7ac83a0acb1b1a6a2b0a2afa6b0eda0acaeeda1b1"><span class="__cf_email__" data-cfemail="d7b4b8b9a3b6a3b897b4b8a5a5b2b6a4b6bbb2a4f9b4b8baf9b5a5">[email&#160;protected]</span></a></div>
+          </div>
+          <div class="info-item">
+            <div class="icon-wrap"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 3C9 3 3.5 8.5 3.5 15.5c0 2.4.7 4.7 1.9 6.7L3 29l7-1.8c1.9 1 4 1.6 6 1.6C23 28.8 28.5 23.3 28.5 16.3S23 3 16 3z" transform="translate(-2 -2) scale(0.9)"/></svg></div>
+            <div class="info-body"><strong>WhatsApp</strong><a href="https://wa.me/5521999990000" target="_blank" rel="noopener">+55 (21) 99999-0000</a></div>
+          </div>
+          <div class="info-item">
+            <div class="icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+            <div class="info-body"><strong>Horário</strong><span>Segunda a sexta<br/>9h às 18h (BRT)</span></div>
+          </div>
+        </div>
+
+        <div class="img-ph map-ph" data-label="[ Mapa — Av. Rio Branco, 156, Rio de Janeiro ]"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col footer-brand">
+        <a href="index.html" class="logo"><img class="logo-on-light" src="assets/logo-light-bg.png" alt="Corrêa Sales Assessoria Contábil" /><img class="logo-on-dark" src="assets/logo-dark-bg.png" alt="Corrêa Sales Assessoria Contábil" /></a>
+        <p>Contabilidade consultiva e assessoria financeira para pequenas e médias empresas em todo o Brasil.</p>
+        <div class="socials">
+          <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93a1.65 1.65 0 00-1.53 1.11c-.02.06-.05.19-.05.32V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"/></svg></a>
+          <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+          <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 12a10 10 0 10-11.56 9.87v-6.98H7.9V12h2.54V9.8c0-2.51 1.49-3.9 3.78-3.9 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.78l-.44 2.89h-2.34v6.98A10 10 0 0022 12z"/></svg></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h5>Navegação</h5>
+        <ul><li><a href="index.html">Início</a></li><li><a href="sobre.html">Sobre nós</a></li><li><a href="servicos.html">Serviços</a></li><li><a href="blog.html">Blog</a></li><li><a href="contato.html">Contato</a></li></ul>
+      </div>
+      <div class="footer-col">
+        <h5>Contato</h5>
+        <ul>
+          <li>Av. Rio Branco, 156 — 18º andar<br/>Centro, Rio de Janeiro — RJ</li>
+          <li><a href="/cdn-cgi/l/email-protection#43202c2d3722372c03202c3131262230222f26306d202c2e6d2131"><span class="__cf_email__" data-cfemail="80e3efeef4e1f4efc0e3eff2f2e5e1f3e1ece5f3aee3efedaee2f2">[email&#160;protected]</span></a></li>
+          <li><a href="tel:+552133339999">+55 (21) 3333-9999</a></li>
+          <li>Seg. a sex. — 9h às 18h</li>
+        </ul>
+      </div>
+      <div class="footer-col newsletter">
+        <h5>Newsletter fiscal</h5>
+        <p style="margin-bottom:14px">Receba mensalmente atualizações tributárias e dicas de gestão financeira.</p>
+        <form><input type="email" placeholder="Seu e-mail corporativo" required/><button type="submit">Inscrever</button></form>
+        <p>Sem spam. Cancele quando quiser.</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>© 2026 Correa Sales Assessoria Contábil Ltda. — CNPJ 00.000.000/0001-00 • CRC-RJ 000000/O-0</div>
+      <div><a href="#">Política de privacidade</a> · <a href="#">Termos de uso</a></div>
+    </div>
+  </div>
+</footer>
+
+<a href="https://wa.me/5521999990000" target="_blank" rel="noopener" class="wa-float" aria-label="WhatsApp"><span class="pulse"></span>
+  <svg viewBox="0 0 32 32" fill="currentColor"><path d="M16 3C9 3 3.5 8.5 3.5 15.5c0 2.4.7 4.7 1.9 6.7L3 29l7-1.8c1.9 1 4 1.6 6 1.6C23 28.8 28.5 23.3 28.5 16.3S23 3 16 3zm0 23.3c-1.8 0-3.5-.5-5-1.3l-.4-.2-4.1 1.1 1.1-4-.3-.4c-1-1.6-1.5-3.4-1.5-5.3C5.8 9.6 10.4 5 16 5s10.2 4.6 10.2 10.3-4.6 11-10.2 11zm5.6-7.7c-.3-.2-1.8-.9-2.1-1s-.5-.2-.7.2c-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.2-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.5-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5s-.7-1.7-1-2.4c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4s-1 1-1 2.4 1 2.8 1.2 3c.1.2 2.1 3.2 5 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.3-.7.3-1.3.2-1.4-.1-.2-.3-.3-.6-.4z"/></svg>
+</a>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="assets/script.js"></script>
+</body>
+</html>
