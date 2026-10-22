@@ -100,7 +100,7 @@
   const form = document.querySelector('#contact-form');
   if (!form) return;
   const status = form.querySelector('.form-status');
-  const WA = '5521984660862';
+  const WA = '5521984660882';
 
   form.addEventListener('submit', (e) => {
     e.preventDefault();
@@ -139,7 +139,7 @@
     const win = window.open(waUrl, '_blank', 'noopener');
     if (!win) window.location.href = waUrl;
 
-    status.innerHTML = 'Abrimos o WhatsApp com sua mensagem pronta — é só tocar em enviar. Se não abrir, <a href="' + waUrl + '" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline">clique aqui</a> ou chame no (21) 98466-0862.';
+    status.innerHTML = 'Abrimos o WhatsApp com sua mensagem pronta — é só tocar em enviar. Se não abrir, <a href="' + waUrl + '" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline">clique aqui</a> ou chame no (21) 98466-0882.';
     status.classList.add('show');
   });
 

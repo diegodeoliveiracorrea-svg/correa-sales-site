@@ -98,9 +98,9 @@ Se algum destes mudar, busque e substitua em **todos** os arquivos HTML:
 
 | Dado | Valor atual |
 |---|---|
-| Telefone | (21) 98466-0862 |
-| Link do telefone | `tel:+5521984660862` |
-| WhatsApp | `wa.me/5521984660862` |
+| Telefone | (21) 98466-0882 |
+| Link do telefone | `tel:+5521984660882` |
+| WhatsApp | `wa.me/5521984660882` |
 | E-mail | diego@correasalesassessoria.com.br |
 | Instagram | @correasalesassessoria |
 | CNPJ | 34.198.102/0001-85 |
@@ -210,7 +210,7 @@ Baixe a pasta `publicar/` (ZIP), extraia, e no Vercel Dashboard:
 
 | Data | Alteração |
 |---|---|
-| out/2026 | Telefone trocado de (21) 98439-5779 para (21) 98466-0862 em todas as páginas |
+| out/2026 | Telefone trocado de (21) 98439-5779 para (21) 98466-0882 em todas as páginas |
 | out/2026 | Mensagem automática do WhatsApp adicionada |
 | out/2026 | Foto da Home gerada (reunião consultiva, com Pão de Açúcar ao fundo) |
 | out/2026 | Fotos reais do Diego e da Tatiana inseridas na página Sobre |

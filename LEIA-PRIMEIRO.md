@@ -152,7 +152,7 @@ Se o botão **Push origin** não aparecer, clique em **Fetch origin** primeiro.
 
 | Item | Situação |
 |---|---|
-| Telefone / WhatsApp (21) 98466-0862 | ✅ todas as páginas |
+| Telefone / WhatsApp (21) 98466-0882 | ✅ todas as páginas |
 | Fotos do time e do ambiente | ✅ |
 | Agenda de consultoria (Zoho Calendar) | ✅ link + QR |
 | Formulário de mensagem | ✅ envia pelo WhatsApp |
