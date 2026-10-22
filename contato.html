@@ -43,6 +43,18 @@
   .info-item .info-body a, .info-item .info-body span { color:var(--graphite); font-size:0.95rem; }
   .info-item .info-body a:hover { color:var(--gold); }
   .map-ph { aspect-ratio:16/6; margin-top:24px; }
+
+  /* Área do Cliente — eContador */
+  .client-card { margin-top:16px; padding:28px 32px; background:var(--navy); border-radius:var(--radius); color:#fff; }
+  .client-card .client-eyebrow { display:inline-flex; align-items:center; gap:8px; font-family:var(--font-mono); font-size:0.64rem; letter-spacing:0.16em; text-transform:uppercase; color:var(--gold-2); margin-bottom:14px; }
+  .client-card .client-eyebrow svg { width:14px; height:14px; }
+  .client-card h4 { color:#fff; font-size:1.05rem; margin-bottom:8px; }
+  .client-card p { color:rgba(255,255,255,0.72); font-size:0.9rem; line-height:1.6; margin-bottom:20px; }
+  .client-card .btn-client-alt { display:flex; align-items:center; justify-content:center; gap:9px; width:100%; padding:13px 20px; border:1px solid var(--border-gold); border-radius:999px; color:#fff; font-size:0.86rem; font-weight:500; text-align:center; transition:background 0.2s ease, border-color 0.2s ease; }
+  .client-card .btn-client-alt:hover { background:rgba(176,138,87,0.18); border-color:var(--gold); color:#fff; }
+  .client-card .btn-client-alt svg { width:13px; height:13px; opacity:0.8; flex-shrink:0; }
+  .client-card .client-note { font-size:0.76rem; color:rgba(255,255,255,0.45); margin-top:14px; margin-bottom:0; }
+  @media (max-width:640px){ .client-card { padding:24px 22px; } }
 </style>
 </head>
 <body data-screen-label="Contato">
@@ -58,6 +70,7 @@
       <a href="contato.html" class="active">Contato</a>
     </nav>
     <div class="header-cta">
+      <a href="https://econtador.alterdata.com.br/correasales" target="_blank" rel="noopener" class="btn btn-client"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><polyline points="10 17 15 12 10 7"/><line x1="15" y1="12" x2="3" y2="12"/></svg>Área do Cliente</a>
       <a href="contato.html#agendar" class="btn btn-primary">Consultoria gratuita</a>
       <button class="menu-toggle" aria-label="Abrir menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg></button>
     </div>
@@ -76,7 +89,7 @@
     <a href="blog.html">Blog</a>
     <a href="contato.html" class="active">Contato</a>
   </nav>
-  <div class="drawer-cta"><a href="contato.html#agendar" class="btn btn-primary">Agendar consultoria gratuita</a></div>
+  <div class="drawer-cta"><a href="contato.html#agendar" class="btn btn-primary">Agendar consultoria gratuita</a><a href="https://econtador.alterdata.com.br/correasales" target="_blank" rel="noopener" class="btn btn-client" style="width:100%;justify-content:center;margin-top:10px">Área do Cliente</a></div>
 </div>
 
 <section class="hero-slim">
@@ -213,6 +226,21 @@
             <div class="info-body"><strong>Horário</strong><span>Segunda a sexta<br/>9h às 18h (BRT)</span></div>
           </div>
         </div>
+
+        <!-- ÁREA DO CLIENTE — eContador -->
+        <div class="client-card">
+          <span class="client-eyebrow">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 3v18"/></svg>
+            Já é nosso cliente
+          </span>
+          <h4>Área do Cliente</h4>
+          <p>Envie documentos, consulte guias e certidões, acompanhe folha de pagamento e férias — tudo em um só lugar, pelo navegador ou pelo app.</p>
+          <a class="btn-client-alt" href="https://econtador.alterdata.com.br/correasales" target="_blank" rel="noopener">
+            Acessar a Área do Cliente
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          </a>
+          <p class="client-note">Login pelo CPF ou CNPJ. A senha é enviada ao e-mail cadastrado.</p>
+        </div>
       </div>
     </div>
   </div>
@@ -230,7 +258,7 @@
       </div>
       <div class="footer-col">
         <h5>Navegação</h5>
-        <ul><li><a href="index.html">Início</a></li><li><a href="sobre.html">Sobre nós</a></li><li><a href="servicos.html">Serviços</a></li><li><a href="blog.html">Blog</a></li><li><a href="contato.html">Contato</a></li></ul>
+        <ul><li><a href="index.html">Início</a></li><li><a href="sobre.html">Sobre nós</a></li><li><a href="servicos.html">Serviços</a></li><li><a href="blog.html">Blog</a></li><li><a href="contato.html">Contato</a></li><li><a href="https://econtador.alterdata.com.br/correasales" target="_blank" rel="noopener">Área do Cliente</a></li></ul>
       </div>
       <div class="footer-col">
         <h5>Contato</h5>
