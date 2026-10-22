@@ -1,0 +1,12 @@
+# Arquivos de trabalho — não vão para o site publicado
+design_handoff_site_correa_sales/
+design_handoff_assets.md
+screenshots/
+.thumbnail.jpg
+
+# Mapas internos do editor de design
+*.srcmap.json
+
+# Sistema
+.DS_Store
+Thumbs.db

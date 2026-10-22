@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://www.correasalesassessoria.com.br/sitemap.xml

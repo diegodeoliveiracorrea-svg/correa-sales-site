@@ -94,26 +94,53 @@
   }
 })();
 
-// Contact form (simulated submission)
+// Contact form — envia a mensagem pelo WhatsApp do escritório
+// (sem servidor: a mensagem chega de verdade, na conversa do cliente com o escritório)
 (function () {
   const form = document.querySelector('#contact-form');
   if (!form) return;
   const status = form.querySelector('.form-status');
+  const WA = '5521984660862';
+
   form.addEventListener('submit', (e) => {
     e.preventDefault();
-    const btn = form.querySelector('button[type="submit"]');
-    btn.disabled = true;
-    btn.textContent = 'Enviando...';
-    setTimeout(() => {
-      form.reset();
-      btn.disabled = false;
-      btn.textContent = 'Enviar mensagem';
-      if (status) {
-        status.textContent = '✓ Recebemos sua mensagem. Nossa equipe entrará em contato em até 1 dia útil.';
-        status.classList.add('show');
-        setTimeout(() => status.classList.remove('show'), 6000);
-      }
-    }, 900);
+    const v = (n) => (form.querySelector(`[name="${n}"]`)?.value || '').trim();
+    const nome = v('nome'), email = v('email'), tel = v('telefone'), msg = v('mensagem');
+    const select = form.querySelector('select[name="servico"]');
+    const servico = select && select.value ? select.options[select.selectedIndex].text : '';
+
+    if (!nome || !/^\S+@\S+\.\S+$/.test(email) || tel.replace(/\D/g, '').length < 10 || !msg) {
+      status.textContent = 'Preencha nome, e-mail, telefone com DDD e a mensagem para continuar.';
+      status.style.borderLeftColor = '#a2402f';
+      status.style.color = '#a2402f';
+      status.classList.add('show');
+      return;
+    }
+
+    status.style.borderLeftColor = '';
+    status.style.color = '';
+
+    const texto = [
+      'Olá! Enviei uma mensagem pelo site.',
+      '',
+      `Nome: ${nome}`,
+      v('empresa') ? `Empresa: ${v('empresa')}` : null,
+      `E-mail: ${email}`,
+      `Telefone: ${tel}`,
+      servico ? `Serviço: ${servico}` : null,
+      '',
+      msg
+    ].filter(l => l !== null).join('\n');
+
+    const waUrl = `https://wa.me/${WA}?text=${encodeURIComponent(texto)}`;
+
+    // Abre direto na mesma aba (links wa.me funcionam bem assim e não caem em
+    // bloqueio de pop-up). Se o navegador insistir, o aviso abaixo traz o número.
+    const win = window.open(waUrl, '_blank', 'noopener');
+    if (!win) window.location.href = waUrl;
+
+    status.innerHTML = 'Abrimos o WhatsApp com sua mensagem pronta — é só tocar em enviar. Se não abrir, <a href="' + waUrl + '" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline">clique aqui</a> ou chame no (21) 98466-0862.';
+    status.classList.add('show');
   });
 
   // Pre-fill service from ?servico= query param

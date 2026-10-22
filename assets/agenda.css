@@ -1,0 +1,144 @@
+/* Agenda — acesso à página de agendamento do Zoho Calendar */
+.ag {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+}
+
+.ag-head {
+  padding: 36px 40px 28px;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  background: var(--off);
+}
+.ag-head h2 { margin: 0 0 6px; }
+.ag-head p { margin: 0; color: var(--graphite); font-size: 0.95rem; max-width: 46ch; }
+.ag-meta { display: flex; gap: 18px; flex-wrap: wrap; font-size: 0.82rem; color: var(--graphite); }
+.ag-meta span { display: inline-flex; align-items: center; gap: 7px; }
+.ag-meta svg { width: 15px; height: 15px; color: var(--gold); }
+
+/* corpo: chamada + QR */
+.ag-body {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 40px;
+  align-items: center;
+  padding: 36px 40px;
+}
+@media (max-width: 720px) {
+  .ag-body { grid-template-columns: 1fr; gap: 28px; padding: 28px 22px; }
+  .ag-head { padding: 28px 22px 24px; }
+}
+
+.ag-pitch h3 {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  font-size: 1.65rem;
+  line-height: 1.2;
+  color: var(--navy);
+  margin: 0 0 10px;
+}
+.ag-pitch p {
+  color: var(--graphite);
+  font-size: 0.95rem;
+  margin: 0 0 22px;
+  max-width: 44ch;
+}
+
+.ag-steps-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 26px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.ag-steps-list li {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  font-size: 0.92rem;
+  color: var(--graphite);
+  line-height: 1.45;
+}
+.ag-steps-list b {
+  flex-shrink: 0;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: rgba(176, 138, 87, 0.14);
+  color: var(--gold-3);
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 600;
+  display: grid;
+  place-items: center;
+  margin-top: 1px;
+}
+
+.ag-cta-row { display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
+.ag-cta-row .btn { display: inline-flex; align-items: center; gap: 10px; }
+.ag-cta-row .btn svg { width: 16px; height: 16px; }
+.ag-alt {
+  font-size: 0.88rem;
+  color: var(--graphite);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: var(--border-gold);
+}
+.ag-alt:hover { color: var(--gold-3); }
+
+/* QR */
+.ag-qr {
+  text-align: center;
+  padding: 18px;
+  border: 1px solid var(--border-gold);
+  border-radius: var(--radius);
+  background: var(--off);
+}
+.ag-qr img {
+  display: block;
+  width: 148px;
+  height: 148px;
+  border-radius: 6px;
+  background: #fff;
+  padding: 12px;
+  margin-bottom: 12px;
+}
+.ag-qr span {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: var(--graphite-2);
+  line-height: 1.6;
+  max-width: 150px;
+}
+
+.ag-foot {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  padding: 18px 40px;
+  border-top: 1px solid var(--border);
+  background: var(--off);
+}
+.ag-foot p { margin: 0; font-size: 0.86rem; color: var(--graphite); }
+.ag-foot .ag-links { display: flex; gap: 18px; flex-wrap: wrap; font-size: 0.86rem; }
+.ag-foot a { color: var(--gold-3); text-decoration: underline; text-underline-offset: 3px; }
+.ag-foot a:hover { color: var(--gold); }
+
+@media (max-width: 720px) {
+  .ag-foot { padding: 16px 22px; }
+  .ag-qr { justify-self: start; }
+  .ag-qr img { width: 128px; height: 128px; }
+}

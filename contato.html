@@ -5,10 +5,23 @@
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>Contato — Fale com um especialista | Correa Sales</title>
 <meta name="description" content="Agende uma consultoria gratuita ou fale com nosso time. Escritório no Rio de Janeiro, atendimento em todo o Brasil."/>
+<link rel="icon" type="image/png" href="assets/favicon.png"/>
+<link rel="apple-touch-icon" href="assets/favicon.png"/>
+<meta name="theme-color" content="#102742"/>
+<meta property="og:type" content="website"/>
+<meta property="og:site_name" content="Correa Sales Assessoria Contábil"/>
+<meta property="og:locale" content="pt_BR"/>
+<meta property="og:title" content="Contato e agendamento — Correa Sales"/>
+<meta property="og:description" content="Agende sua consultoria gratuita de 45 minutos por videochamada. Fale com nosso time por WhatsApp, e-mail ou formulário."/>
+<meta property="og:url" content="https://www.correasalesassessoria.com.br/contato.html"/>
+<meta property="og:image" content="https://www.correasalesassessoria.com.br/assets/hero-reuniao.jpg"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<link rel="canonical" href="https://www.correasalesassessoria.com.br/contato.html"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
 <link rel="stylesheet" href="assets/styles.css"/>
+<link rel="stylesheet" href="assets/agenda.css"/>
 <style>
   .contact-layout { display:grid; grid-template-columns:1.3fr 1fr; gap:56px; align-items:flex-start; }
   @media (max-width:900px){ .contact-layout { grid-template-columns:1fr; gap:40px; } }
@@ -45,7 +58,7 @@
       <a href="contato.html" class="active">Contato</a>
     </nav>
     <div class="header-cta">
-      <a href="contato.html" class="btn btn-primary">Consultoria gratuita</a>
+      <a href="contato.html#agendar" class="btn btn-primary">Consultoria gratuita</a>
       <button class="menu-toggle" aria-label="Abrir menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg></button>
     </div>
   </div>
@@ -63,24 +76,74 @@
     <a href="blog.html">Blog</a>
     <a href="contato.html" class="active">Contato</a>
   </nav>
-  <div class="drawer-cta"><a href="contato.html" class="btn btn-primary">Agendar consultoria gratuita</a></div>
+  <div class="drawer-cta"><a href="contato.html#agendar" class="btn btn-primary">Agendar consultoria gratuita</a></div>
 </div>
 
 <section class="hero-slim">
   <div class="hero-inner-slim reveal">
     <span class="eyebrow">Vamos conversar</span>
     <h1>Comece com uma consultoria gratuita.</h1>
-    <p class="hero-sub">Preencha o formulário abaixo ou fale conosco pelo canal que preferir. Nosso time responde em até 1 dia útil.</p>
+    <p class="hero-sub">Escolha o melhor dia e horário na agenda abaixo — leva menos de 1 minuto. Se preferir, envie uma mensagem ou fale pelo WhatsApp.</p>
   </div>
 </section>
 
-<section class="section" style="padding-top:24px">
+<!-- AGENDA — Zoho Calendar -->
+<section class="section" id="agendar" style="padding-top:24px; padding-bottom:24px">
+  <div class="container" style="max-width:1000px">
+    <div class="ag reveal">
+      <div class="ag-head">
+        <div>
+          <h2>Agende sua consultoria gratuita</h2>
+          <p>Escolha o horário direto na agenda do escritório. A confirmação chega por e-mail para você e para nós.</p>
+        </div>
+        <div class="ag-meta">
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>45 minutos</span>
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="5" width="15" height="14" rx="2"/><path d="M17 10l5-3v10l-5-3"/></svg>Videochamada no Zoho Meeting</span>
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 6L9 17l-5-5"/></svg>Gratuito</span>
+        </div>
+      </div>
+
+      <div class="ag-body">
+        <div class="ag-pitch">
+          <h3>O horário é seu — escolha em um minuto</h3>
+          <p>Os horários são da agenda real do escritório. O que estiver ocupado não aparece, e a sala do Zoho Meeting já vem com a confirmação.</p>
+          <ul class="ag-steps-list">
+            <li><b>1</b><span>Escolha o dia e o horário na agenda do Zoho.</span></li>
+            <li><b>2</b><span>Confirme seus dados — a resposta chega por e-mail na hora.</span></li>
+            <li><b>3</b><span>No dia, entre na sala pelo link da confirmação.</span></li>
+          </ul>
+          <div class="ag-cta-row">
+            <a class="btn btn-primary btn-lg" href="https://calendar.zoho.com/zc/view/slot-booking/0801123c342b0e0d87d7045cadc52f640000963e7820bdcc9b8501696d8dd90de0e369d91d941cbf8edcfac0abbb4a7bf6443433f2ef96f0f1058032d90a5fae" target="_blank" rel="noopener">
+              Abrir a agenda
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            </a>
+            <a class="ag-alt" href="https://wa.me/5521984660862?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20gostaria%20de%20falar%20com%20um%20contador." target="_blank" rel="noopener">Prefiro pelo WhatsApp</a>
+          </div>
+        </div>
+
+        <div class="ag-qr">
+          <img src="assets/agenda-qr.png" alt="QR code da agenda de consultoria Corrêa Sales" loading="lazy"/>
+          <span>Aponte a câmera<br/>para agendar</span>
+        </div>
+      </div>
+
+      <div class="ag-foot">
+        <p>Horário de Brasília · Segunda a sexta, 9h às 18h · Videochamada no Zoho Meeting</p>
+        <div class="ag-links">
+          <a href="https://calendar.zoho.com/zc/view/slot-booking/0801123c342b0e0d87d7045cadc52f640000963e7820bdcc9b8501696d8dd90de0e369d91d941cbf8edcfac0abbb4a7bf6443433f2ef96f0f1058032d90a5fae" target="_blank" rel="noopener">Abrir em nova aba</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="mensagem" style="padding-top:48px">
   <div class="container">
     <div class="contact-layout reveal">
       <!-- FORM -->
       <div class="form-card">
-        <h2>Envie sua mensagem</h2>
-        <p>Conte um pouco sobre sua empresa e nosso especialista entra em contato.</p>
+        <h2>Prefere enviar uma mensagem?</h2>
+        <p>Conte um pouco sobre sua empresa e nosso especialista entra em contato em até 1 dia útil.</p>
         <form id="contact-form" novalidate>
           <div class="form-grid">
             <div class="form-field">
@@ -119,7 +182,7 @@
             <div class="full">
               <button type="submit" class="btn btn-primary btn-lg" style="width:100%">Enviar mensagem</button>
               <div class="form-status" role="status"></div>
-              <p style="font-size:0.8rem; color:var(--graphite-2); margin-top:14px; text-align:center">Ao enviar, você concorda com nossa <a href="#" style="color:var(--gold)">política de privacidade</a>.</p>
+              <p style="font-size:0.8rem; color:var(--graphite-2); margin-top:14px; text-align:center">Ao enviar, você concorda com nossa <a href="politica-de-privacidade.html" style="color:var(--gold)">política de privacidade</a>.</p>
             </div>
           </div>
         </form>
@@ -131,11 +194,11 @@
           <h4>Fale conosco diretamente</h4>
           <div class="info-item">
             <div class="icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
-            <div class="info-body"><strong>Endereço</strong><span>Av. Marechal Câmara, 160 — Sala 931<br/>Centro, Rio de Janeiro — RJ<br/>CEP 20020-080</span></div>
+            <div class="info-body"><strong>Atendimento</strong><span>Atendimento online em todo o Brasil<br/>Rio de Janeiro — RJ</span></div>
           </div>
           <div class="info-item">
             <div class="icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
-            <div class="info-body"><strong>Telefone</strong><a href="tel:+5521984395779">(21) 98439-5779</a></div>
+            <div class="info-body"><strong>Telefone</strong><a href="tel:+5521984660862">(21) 98466-0862</a></div>
           </div>
           <div class="info-item">
             <div class="icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
@@ -143,15 +206,13 @@
           </div>
           <div class="info-item">
             <div class="icon-wrap"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 3C9 3 3.5 8.5 3.5 15.5c0 2.4.7 4.7 1.9 6.7L3 29l7-1.8c1.9 1 4 1.6 6 1.6C23 28.8 28.5 23.3 28.5 16.3S23 3 16 3z" transform="translate(-2 -2) scale(0.9)"/></svg></div>
-            <div class="info-body"><strong>WhatsApp</strong><a href="https://wa.me/5521984395779" target="_blank" rel="noopener">(21) 98439-5779</a></div>
+            <div class="info-body"><strong>WhatsApp</strong><a href="https://wa.me/5521984660862?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20gostaria%20de%20falar%20com%20um%20contador." target="_blank" rel="noopener">(21) 98466-0862</a></div>
           </div>
           <div class="info-item">
             <div class="icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
             <div class="info-body"><strong>Horário</strong><span>Segunda a sexta<br/>9h às 18h (BRT)</span></div>
           </div>
         </div>
-
-        <div class="img-ph map-ph" data-label="[ Mapa — Av. Marechal Câmara, 160, Rio de Janeiro ]"></div>
       </div>
     </div>
   </div>
@@ -164,9 +225,7 @@
         <a href="index.html" class="logo"><img class="logo-on-light" src="assets/logo-light-bg.png" alt="Corrêa Sales Assessoria Contábil"/><img class="logo-on-dark" src="assets/logo-dark-bg.png" alt="Corrêa Sales Assessoria Contábil"/></a>
         <p>Contabilidade consultiva e assessoria financeira para pequenas e médias empresas em todo o Brasil.</p>
         <div class="socials">
-          <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93a1.65 1.65 0 00-1.53 1.11c-.02.06-.05.19-.05.32V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"/></svg></a>
           <a href="https://www.instagram.com/correasalesassessoria/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
-          <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 12a10 10 0 10-11.56 9.87v-6.98H7.9V12h2.54V9.8c0-2.51 1.49-3.9 3.78-3.9 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.78l-.44 2.89h-2.34v6.98A10 10 0 0022 12z"/></svg></a>
         </div>
       </div>
       <div class="footer-col">
@@ -176,9 +235,9 @@
       <div class="footer-col">
         <h5>Contato</h5>
         <ul>
-          <li>Av. Marechal Câmara, 160 — Sala 931<br/>Centro, Rio de Janeiro — RJ</li>
+          <li>Atendimento online em todo o Brasil<br/>Rio de Janeiro — RJ</li>
           <li><a class="js-email" data-u="diego" data-d="correasalesassessoria.com.br" href="#">contato por e-mail</a></li>
-          <li><a href="tel:+5521984395779">(21) 98439-5779</a></li>
+          <li><a href="tel:+5521984660862">(21) 98466-0862</a></li>
           <li>Seg. a sex. — 9h às 18h</li>
         </ul>
       </div>
@@ -191,12 +250,12 @@
     </div>
     <div class="footer-bottom">
       <div>© 2026 Correa Sales Assessoria Contábil Ltda. — CNPJ 34.198.102/0001-85</div>
-      <div><a href="#">Política de privacidade</a> · <a href="#">Termos de uso</a></div>
+      <div><a href="politica-de-privacidade.html">Política de privacidade</a></div>
     </div>
   </div>
 </footer>
 
-<a href="https://wa.me/5521984395779" target="_blank" rel="noopener" class="wa-float" aria-label="WhatsApp"><span class="pulse"></span>
+<a href="https://wa.me/5521984660862?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20gostaria%20de%20falar%20com%20um%20contador." target="_blank" rel="noopener" class="wa-float" aria-label="WhatsApp"><span class="pulse"></span>
   <svg viewBox="0 0 32 32" fill="currentColor"><path d="M16 3C9 3 3.5 8.5 3.5 15.5c0 2.4.7 4.7 1.9 6.7L3 29l7-1.8c1.9 1 4 1.6 6 1.6C23 28.8 28.5 23.3 28.5 16.3S23 3 16 3zm0 23.3c-1.8 0-3.5-.5-5-1.3l-.4-.2-4.1 1.1 1.1-4-.3-.4c-1-1.6-1.5-3.4-1.5-5.3C5.8 9.6 10.4 5 16 5s10.2 4.6 10.2 10.3-4.6 11-10.2 11zm5.6-7.7c-.3-.2-1.8-.9-2.1-1s-.5-.2-.7.2c-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.2-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.5-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5s-.7-1.7-1-2.4c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4s-1 1-1 2.4 1 2.8 1.2 3c.1.2 2.1 3.2 5 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.3-.7.3-1.3.2-1.4-.1-.2-.3-.3-.6-.4z"/></svg>
 </a>
 
