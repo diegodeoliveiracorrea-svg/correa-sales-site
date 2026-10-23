@@ -100,7 +100,10 @@
       <p>Não usamos cookies de rastreamento, não criamos perfis de navegação e não coletamos dados sensíveis por este site.</p>
 
       <h2>Contagem de acessos</h2>
-      <p>Usamos o <strong>Vercel Web Analytics</strong> para saber quantas pessoas visitam o site e quais páginas são mais procuradas. A medição é anônima e agregada: não usa cookies, não identifica quem você é e não acompanha sua navegação em outros sites. Serve só para entendermos o que é útil para quem nos procura.</p>
+      <p>Usamos o <strong>Vercel Web Analytics</strong> e o <strong>Metricool</strong> para saber quantas pessoas visitam o site, quais páginas são mais procuradas e como o site é encontrado. A medição é anônima e agregada: não identifica quem você é e não acompanha sua navegação em outros sites. Serve só para entendermos o que é útil para quem nos procura.</p>
+
+      <h2>Cookies de medição</h2>
+      <p>O Metricool pode usar cookies próprios para medir visitas e atribuir a origem do acesso (por exemplo, se a pessoa chegou pelo Instagram). Esses cookies não contêm dados pessoais e não são usados para publicidade. Você pode bloqueá-los nas configurações do seu navegador sem prejuízo de navegar no site.</p>
 
       <h2>Para que usamos</h2>
       <ul>
@@ -198,6 +201,21 @@ document.addEventListener('DOMContentLoaded', function(){
     s.src = '/_vercel/insights/script.js';
     document.body.appendChild(s);
   }
+})();
+</script>
+<script>
+/* Metricool — análise de tráfego e redes sociais */
+(function(){
+  function loadScript(a){
+    var b=document.getElementsByTagName("head")[0],
+        c=document.createElement("script");
+    c.type="text/javascript";
+    c.src="https://tracker.metricool.com/resources/be.js";
+    c.onreadystatechange=a;
+    c.onload=a;
+    b.appendChild(c);
+  }
+  loadScript(function(){ beTracker.t({hash:"114a66aad771b2655c5c5ca68fe7a662"}); });
 })();
 </script>
 </body>

@@ -111,6 +111,19 @@ Se algum destes mudar, busque e substitua em **todos** os arquivos HTML:
 **Mensagem automática do WhatsApp:**
 > Olá! Vim pelo site e gostaria de falar com um contador.
 
+### Área do Cliente (eContador / Alterdata)
+
+Link: `https://econtador.alterdata.com.br/correasales`
+
+Aparece em três lugares em todas as páginas:
+1. **Topo** (desktop) — pílula com contorno, antes do botão "Consultoria gratuita" (classe `.btn-client`)
+2. **Menu mobile** — abaixo do botão de agendamento
+3. **Rodapé** — último item da coluna Navegação
+
+Na página de Contato há também um cartão explicativo (classe `.client-card`), em azul-marinho, com o texto do que o cliente encontra ali e a nota "Login pelo CPF ou CNPJ".
+
+**Como o cliente é cadastrado:** no eContador → Usuários → Novo Usuário. O CPF vira o login, e a senha é enviada automaticamente ao e-mail cadastrado. O cliente não se cadastra sozinho pelo site, e não há API pública para automatizar isso.
+
 ---
 
 ## 6. Agenda de consultoria (Zoho Calendar)
@@ -224,6 +237,8 @@ Baixe a pasta `publicar/` (ZIP), extraia, e no Vercel Dashboard:
 | out/2026 | Faixa de logos falsos removida |
 | out/2026 | Favicon, sitemap, robots e Open Graph adicionados |
 | out/2026 | Contagem de acessos (Vercel Analytics) ativada |
+| out/2026 | Telefone corrigido para (21) 98466-0882 em todas as páginas |
+| out/2026 | Área do Cliente (eContador) integrada no topo, menu mobile, rodapé e Contato |
 
 ---
 
