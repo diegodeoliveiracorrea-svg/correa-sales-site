@@ -106,11 +106,13 @@
     e.preventDefault();
     const v = (n) => (form.querySelector(`[name="${n}"]`)?.value || '').trim();
     const nome = v('nome'), email = v('email'), tel = v('telefone'), msg = v('mensagem');
+    const tipo = v('tipo'), func = v('funcionarios'), preoc = v('preocupacao'), urg = v('urgencia');
     const select = form.querySelector('select[name="servico"]');
     const servico = select && select.value ? select.options[select.selectedIndex].text : '';
+    const emailOk = !email || /^\S+@\S+\.\S+$/.test(email);
 
-    if (!nome || !/^\S+@\S+\.\S+$/.test(email) || tel.replace(/\D/g, '').length < 10 || !msg) {
-      status.textContent = 'Preencha nome, e-mail, telefone com DDD e a mensagem para continuar.';
+    if (!nome || tel.replace(/\D/g, '').length < 10 || !tipo || !func || !preoc || !urg || !emailOk) {
+      status.textContent = 'Preencha nome, WhatsApp com DDD, tipo de empresa, funcionários, preocupação e urgência para continuar.';
       status.style.borderLeftColor = '#a2402f';
       status.style.color = '#a2402f';
       status.classList.add('show');
@@ -121,15 +123,18 @@
     status.style.color = '';
 
     const texto = [
-      'Olá! Enviei uma mensagem pelo site.',
-      '',
+      'DIAGNÓSTICO',
       `Nome: ${nome}`,
       v('empresa') ? `Empresa: ${v('empresa')}` : null,
-      `E-mail: ${email}`,
-      `Telefone: ${tel}`,
+      `Tipo: ${tipo}`,
+      `Funcionários: ${func}`,
+      `Preocupação: ${preoc}`,
+      `Urgência: ${urg}`,
       servico ? `Serviço: ${servico}` : null,
-      '',
-      msg
+      email ? `E-mail: ${email}` : null,
+      `WhatsApp: ${tel}`,
+      msg ? '' : null,
+      msg || null
     ].filter(l => l !== null).join('\n');
 
     const waUrl = `https://wa.me/${WA}?text=${encodeURIComponent(texto)}`;
