@@ -159,17 +159,3 @@
   }
 })();
 
-// Newsletter form (simulated)
-(function () {
-  document.querySelectorAll('.newsletter form').forEach(form => {
-    form.addEventListener('submit', (e) => {
-      e.preventDefault();
-      const input = form.querySelector('input');
-      const btn = form.querySelector('button');
-      const original = btn.textContent;
-      btn.textContent = '✓ Inscrito';
-      input.value = '';
-      setTimeout(() => { btn.textContent = original; }, 2400);
-    });
-  });
-})();
