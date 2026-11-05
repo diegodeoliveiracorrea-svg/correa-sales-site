@@ -1,0 +1,43 @@
+{
+  "nome": "perdao_mei",
+  "paleta": "padrao",
+  "rodape_final": "Salve e envie para quem tem MEI",
+  "cards": [
+    {"tipo": "capa", "fundo": "escuro", "tag": "Perdão do MEI · Atualização",
+     "titulo": "Saiu a regra oficial do perdão. <em>Veja o que vale para você.</em>",
+     "texto": "A Portaria Conjunta RFB/PGFN nº 740 explica parcelamento, baixa do MEI, processo na Justiça e o que pagar em 2027."},
+    {"tipo": "conteudo", "fundo": "claro", "tag": "O que é perdoado", "titulo": "Só a parte do <em>INSS do DAS.</em>",
+     "blocos": [
+       {"caixa": "Entra no perdão", "texto": "A contribuição do INSS do DAS-MEI vencida <b>até 13/10/2026</b>, com juros, multas e encargos. Inscrita ou não na Dívida Ativa."},
+       {"caixa_dourada": "Fica de fora", "texto": "O <b>ICMS e o ISS</b> do mesmo DAS e qualquer DAS vencido <b>depois de 13/10/2026</b>."}
+     ]},
+    {"tipo": "conteudo", "fundo": "escuro", "tag": "Quando e como", "titulo": "Automático, em <em>1º de janeiro de 2027.</em>",
+     "blocos": [
+       {"tabela": [["Precisa pedir?", "Não. Receita e PGFN cancelam"], ["Até 01/01/2027", "A dívida continua valendo"], ["O que já foi pago", "Não é devolvido"]]}
+     ]},
+    {"tipo": "conteudo", "fundo": "claro", "tag": "Tem parcelamento?", "titulo": "O acordo muda <em>conforme o que tem dentro.</em>",
+     "blocos": [
+       {"tabela": [["Só INSS do MEI", "Extinto em 01/01/2027"], ["Misturado com ICMS, ISS ou outros", "Revisto: segue só a parte não perdoada"]]},
+       {"nota": "As parcelas pagas são abatidas, mas não devolvidas. Em janeiro, <b>confira o acordo</b> no Regularize ou no Portal da Receita."}
+     ]},
+    {"tipo": "conteudo", "fundo": "escuro", "tag": "Saiu do MEI ou deu baixa?", "titulo": "Você <em>continua</em> com direito.",
+     "blocos": [
+       {"tabela": [["Era MEI quando o DAS venceu?", "A dívida entra no perdão"], ["Não é mais MEI hoje?", "Não precisa cumprir a regra de 2027"]]},
+       {"caixa_dourada": "Aviso de março/2026", "texto": "Exclusão ou desenquadramento por causa dessas dívidas será <b>cancelado ou revisto</b> pela Receita."}
+     ]},
+    {"tipo": "conteudo", "fundo": "claro", "tag": "Tem processo na Justiça?", "titulo": "A dívida <em>também entra</em> no perdão.",
+     "blocos": [
+       {"caixa": "Pode ser pedido", "texto": "Se a dívida está garantida, suspensa ou em discussão, pode ser preciso <b>desistir da ação só sobre a parte perdoada</b>."},
+       {"caixa_dourada": "O que acontece", "texto": "A cobrança judicial é <b>encerrada</b>, bens penhorados e garantias são <b>liberados</b>, sem honorários por esse cancelamento."}
+     ]},
+    {"tipo": "conteudo", "fundo": "escuro", "tag": "Para não perder o perdão", "titulo": "Pague em dia <em>os 6 DAS de 2027.</em>",
+     "blocos": [
+       {"tabela": [["DAS de janeiro a junho/2027", "Vencem de fevereiro a julho/2027"], ["Quem precisa pagar", "Quem continua MEI"]]},
+       {"caixa_dourada": "Atrasou?", "texto": "O perdão é <b>cancelado</b>, a dívida volta (descontado o que foi pago) e o parcelamento extinto <b>não volta</b>."}
+     ]},
+    {"tipo": "cta", "titulo": "Dúvida se o <em>seu DAS</em> entra no perdão?",
+     "texto": "A Corrêa Sales confere a situação do seu CNPJ e o que pagar para não perder o benefício.",
+     "botao": "MANDA DIAGNÓSTICO NO DIRECT",
+     "alerta": "<b>Cuidado com golpes:</b> o governo não cobra para dar o perdão. Aviso oficial só pelo WhatsApp verificado (61) 3207-3332 e no app gov.br."}
+  ]
+}
