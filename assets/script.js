@@ -111,8 +111,8 @@
     const servico = select && select.value ? select.options[select.selectedIndex].text : '';
     const emailOk = !email || /^\S+@\S+\.\S+$/.test(email);
 
-    if (!nome || tel.replace(/\D/g, '').length < 10 || !tipo || !func || !preoc || !urg || !emailOk) {
-      status.textContent = 'Preencha nome, WhatsApp com DDD, tipo de empresa, funcionários, preocupação e urgência para continuar.';
+    if (!nome || tel.replace(/\D/g, '').length < 10 || !preoc || !emailOk) {
+      status.textContent = !emailOk ? 'Confira o e-mail digitado ou deixe o campo em branco.' : 'Preencha nome, WhatsApp com DDD e o que mais preocupa hoje para continuar.';
       status.style.borderLeftColor = '#a2402f';
       status.style.color = '#a2402f';
       status.classList.add('show');
@@ -126,10 +126,10 @@
       'DIAGNÓSTICO',
       `Nome: ${nome}`,
       v('empresa') ? `Empresa: ${v('empresa')}` : null,
-      `Tipo: ${tipo}`,
-      `Funcionários: ${func}`,
       `Preocupação: ${preoc}`,
-      `Urgência: ${urg}`,
+      tipo ? `Tipo: ${tipo}` : null,
+      func ? `Funcionários: ${func}` : null,
+      urg ? `Urgência: ${urg}` : null,
       servico ? `Serviço: ${servico}` : null,
       email ? `E-mail: ${email}` : null,
       `WhatsApp: ${tel}`,
@@ -154,7 +154,7 @@
   const select = form.querySelector('select[name="servico"]');
   if (service && select) {
     for (const opt of select.options) {
-      if (opt.value === service) { select.value = service; break; }
+      if (opt.value === service) { select.value = service; const d = select.closest('details'); if (d) d.open = true; break; }
     }
   }
 })();
