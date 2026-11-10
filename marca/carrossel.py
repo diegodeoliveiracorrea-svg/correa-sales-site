@@ -19,7 +19,8 @@ Formato do roteiro (JSON):
         {"caixa": "Rótulo", "texto": "... <b>negrito</b> ..."},
         {"caixa_dourada": "Rótulo", "texto": "..."},
         {"tabela": [["Esquerda", "Direita em destaque"], ["...", "..."]]},
-        {"nota": "texto pequeno"}
+        {"nota": "texto pequeno"},
+        {"grade": {"colunas": ["Dom","Seg","Ter","Qua","Qui","Sex","Sáb"], "linhas": [["Semana 1","F","F","T","T","T","T","T"]], "legenda": "opcional"}}
      ]},
     {"tipo": "cta", "titulo": "...", "texto": "...", "botao": "MANDA DIAGNÓSTICO NO DIRECT", "alerta": "opcional"}
   ]
@@ -71,6 +72,18 @@ h1 em{{font-style:italic;color:{p['dourado']}}} .light h1 em{{color:{p['dourado_
 .dark .tbl{{background:rgba(255,255,255,.05);border:1.5px solid rgba(255,255,255,.18)}}
 .row{{display:flex;justify-content:space-between;gap:30px;padding:20px 0;font-size:27px;line-height:1.4;border-bottom:1px solid rgba(255,255,255,.16)}}
 .row:last-child{{border-bottom:0}} .row b{{font-weight:700;color:{p['dourado']};text-align:right}}
+.grade{{margin-top:30px;border-radius:16px;overflow:hidden;border:1.5px solid rgba(0,0,0,.14)}}
+.dark .grade{{border-color:rgba(255,255,255,.18)}}
+.grade table{{width:100%;border-collapse:collapse;font-size:22px;text-align:center}}
+.grade th{{background:{p['escuro']};color:{p['dourado']};font-weight:700;letter-spacing:1px;padding:16px 4px;font-size:20px}}
+.dark .grade th{{background:rgba(255,255,255,.06)}}
+.grade td{{padding:14px 4px;border-top:1px solid rgba(0,0,0,.08)}}
+.dark .grade td{{border-top:1px solid rgba(255,255,255,.08);color:{p['claro']}}}
+.grade td.l{{text-align:left;padding-left:18px;font-weight:600;font-size:21px;white-space:nowrap}}
+.grade .f{{display:inline-block;min-width:74px;padding:8px 0;border-radius:30px;background:{p['dourado']};color:{p['escuro']};font-weight:700;font-size:19px}}
+.grade .t{{display:inline-block;min-width:74px;padding:8px 0;border-radius:30px;background:rgba(0,0,0,.06);font-size:19px}}
+.dark .grade .t{{background:rgba(255,255,255,.08)}}
+.legenda{{font-size:21px;margin-top:14px;opacity:.8}}
 .note{{font-size:25px;line-height:1.5;margin-top:26px;opacity:.85}} .note b{{font-weight:700}}
 .foot{{position:absolute;left:96px;right:96px;bottom:70px;border-top:1.5px solid rgba(0,0,0,.14);padding-top:26px;display:flex;justify-content:space-between;font-size:22px}}
 .dark .foot{{border-color:rgba(255,255,255,.16)}}
@@ -94,6 +107,14 @@ def bloco(b):
     if "tabela" in b:
         rows = "".join(f'<div class="row"><span>{a}</span><b>{c}</b></div>' for a, c in b["tabela"])
         return f'<div class="tbl">{rows}</div>'
+    if "grade" in b:
+        g = b["grade"]
+        head = "".join(f"<th>{c}</th>" for c in [""] + g["colunas"])
+        def cel(v):
+            return '<span class="f">Folga</span>' if v == "F" else '<span class="t">Trab.</span>'
+        rows = "".join("<tr><td class='l'>" + r[0] + "</td>" + "".join(f"<td>{cel(v)}</td>" for v in r[1:]) + "</tr>" for r in g["linhas"])
+        leg = f'<div class="legenda">{g["legenda"]}</div>' if g.get("legenda") else ""
+        return f'<div class="grade"><table><tr>{head}</tr>{rows}</table></div>{leg}'
     if "nota" in b:
         return f'<div class="note">{b["nota"]}</div>'
     if "texto" in b:
