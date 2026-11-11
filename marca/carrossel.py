@@ -150,7 +150,7 @@ def logos_recortadas(saida):
     novos = []
     for caminho in (LOGO_FUNDO_ESCURO, LOGO_FUNDO_CLARO):
         im = Image.open(caminho)
-        destino = os.path.join(saida, "_" + os.path.basename(caminho))
+        destino = os.path.abspath(os.path.join(saida, "_" + os.path.basename(caminho)))
         im.crop(im.getbbox()).save(destino)
         novos.append(destino)
     LOGO_FUNDO_ESCURO, LOGO_FUNDO_CLARO = novos
