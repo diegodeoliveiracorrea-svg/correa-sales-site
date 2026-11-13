@@ -1,0 +1,82 @@
+<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow"><meta name="referrer" content="no-referrer">
+<title>Aprovar post | Corrêa Sales</title>
+<link rel="icon" href="../favicon.png">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#102742;--gold:#B08A57;--off:#F6F2EB;--g:#4A4F57;--b:rgba(74,79,87,.16)}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Inter,system-ui,sans-serif;color:var(--g);background:var(--off);line-height:1.5}
+.wrap{max-width:760px;margin:0 auto;padding:28px 16px 60px}
+.top{margin-bottom:22px} .top img{height:46px}
+h1{font-family:'Instrument Serif',serif;font-weight:400;color:var(--navy);font-size:2.1rem;line-height:1.1}
+.lead{margin:10px 0 20px}
+.post{background:#fff;border:1px solid var(--b);border-radius:14px;padding:18px;margin-bottom:18px}
+.post h2{font-size:1.05rem;color:var(--navy)} .post .meta{font-size:.88rem;color:#6b7079;margin:2px 0 12px}
+.strip{display:flex;gap:8px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:6px}
+.strip img{width:78%;max-width:340px;flex:none;border-radius:8px;scroll-snap-align:start;border:1px solid var(--b)}
+video{width:100%;max-width:320px;border-radius:10px;display:block;background:#242833}
+pre{white-space:pre-wrap;font-family:inherit;font-size:.9rem;margin-top:12px;background:var(--off);padding:12px;border-radius:8px}
+.st{display:inline-block;font-size:.75rem;font-weight:600;padding:2px 9px;border-radius:10px;background:#F1EEE8;color:#6b7079;margin-left:6px}
+.st.aprovado,.st.publicado{background:#E7EFE3;color:#3E6B37} .st.erro,.st.recusado{background:#F5E1DC;color:#8E3B2F}
+.acts{display:flex;gap:10px;margin:8px 0 26px;flex-wrap:wrap;position:sticky;bottom:12px}
+.acts button{flex:1;min-width:150px;font:inherit;font-weight:600;padding:14px;border-radius:10px;cursor:pointer;border:0}
+.ok{background:#1f8f4e;color:#fff} .no{background:#fff;border:1.5px solid var(--gold)!important;color:#8f6f42}
+.acts button:disabled{opacity:.5;cursor:default}
+.msg{padding:14px;border-radius:10px;margin-bottom:18px;font-weight:500}
+.msg.bom{background:#E7EFE3;color:#3E6B37} .msg.ruim{background:#F5E1DC;color:#8E3B2F}
+.small{font-size:.8rem;color:#6b7079;margin-top:20px}
+</style></head>
+<body><div class="wrap">
+<div class="top"><img src="../logo-light-bg.png" alt="Corrêa Sales"></div>
+<h1>Aprovar publicação</h1>
+<p class="lead" id="lead">Carregando…</p>
+<div id="msg"></div>
+<div id="lista"></div>
+<div class="acts" id="acts" hidden>
+  <button class="ok" id="bOk">Aprovar e agendar</button>
+  <button class="no" id="bNo">Não publicar</button>
+</div>
+<p class="small">Página interna da Corrêa Sales. Ao aprovar, o post sai sozinho no dia e hora indicados. Para pedir ajuste, não aprove: mande a mudança ao Claude.</p>
+</div>
+<script>
+(function(){
+  var API='https://zjktgygkiktjlgjuyglt.supabase.co/functions/v1/publicador';
+  var q=new URLSearchParams(location.search), grupo=q.get('g')||'', t=q.get('t')||'';
+  var $=function(id){return document.getElementById(id)};
+  var REDE={instagram:'Instagram',facebook:'Facebook'}, TIPO={POST:'Post',REELS:'Reels',STORY:'Story'};
+  var ST={rascunho:'Aguardando aprovação',aprovado:'Aprovado',publicando:'Publicando',processando:'Processando',publicado:'Publicado',erro:'Erro',recusado:'Não publicar',cancelado:'Cancelado'};
+  function esc(s){return String(s==null?'':s).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]})}
+  function quando(iso){var d=new Date(iso);return d.toLocaleString('pt-BR',{timeZone:'America/Sao_Paulo',weekday:'short',day:'2-digit',month:'2-digit',hour:'2-digit',minute:'2-digit'})}
+  function okUrl(u){return /^https:\/\//.test(u)}
+  function aviso(txt,bom){$('msg').innerHTML='<div class="msg '+(bom?'bom':'ruim')+'">'+esc(txt)+'</div>'}
+  function render(itens){
+    $('lead').textContent=itens[0].titulo+' · '+quando(itens[0].agendado_para)+' (horário de Brasília)';
+    $('lista').innerHTML=itens.map(function(p){
+      var m=(p.midias||[]).filter(okUrl).map(function(u,i){return /\.(mp4|mov|m4v)(\?|$)/i.test(u)?'<video src="'+esc(u)+'" controls playsinline preload="metadata"></video>':'<img src="'+esc(u)+'" alt="Imagem '+(i+1)+'" loading="lazy">'}).join('');
+      return '<article class="post"><h2>'+esc(REDE[p.rede]||p.rede)+' · '+esc(TIPO[p.tipo]||p.tipo)+'<span class="st '+esc(p.status)+'">'+esc(ST[p.status]||p.status)+'</span></h2>'
+        +'<p class="meta">'+esc(quando(p.agendado_para))+(p.link&&okUrl(p.link)?' · <a href="'+esc(p.link)+'" target="_blank" rel="noopener">ver publicação</a>':'')+'</p>'
+        +(m?'<div class="strip">'+m+'</div>':'')+(p.texto?'<pre>'+esc(p.texto)+'</pre>':'')+'</article>';
+    }).join('');
+    var pend=itens.some(function(p){return p.status==='rascunho'});
+    $('acts').hidden=!pend;
+    if(!pend) aviso('Este post já foi decidido: '+itens.map(function(p){return (REDE[p.rede]||p.rede)+' '+(ST[p.status]||p.status).toLowerCase()}).join(' · ')+'.',true);
+  }
+  function decidir(acao){
+    if(acao==='recusar'&&!confirm('Não publicar este post?'))return;
+    $('bOk').disabled=$('bNo').disabled=true;
+    fetch(API,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({acao:acao,grupo:grupo,t:t})})
+      .then(function(r){return r.json()}).then(function(j){
+        if(j.erro){aviso(j.erro,false);$('bOk').disabled=$('bNo').disabled=false;return}
+        render(j.itens);aviso(acao==='aprovar'?'Aprovado. O post sai sozinho em '+quando(j.itens[0].agendado_para)+'.':'Combinado: este post não será publicado.',true);
+      }).catch(function(){aviso('Sem conexão. Tente de novo.',false);$('bOk').disabled=$('bNo').disabled=false});
+  }
+  $('bOk').onclick=function(){decidir('aprovar')};
+  $('bNo').onclick=function(){decidir('recusar')};
+  if(!grupo||!t){$('lead').textContent='Link incompleto. Abra o link que veio no e-mail.';return}
+  fetch(API+'?grupo='+encodeURIComponent(grupo)+'&t='+encodeURIComponent(t)).then(function(r){return r.json()}).then(function(j){
+    if(j.erro){$('lead').textContent=j.erro;return} render(j.itens);
+  }).catch(function(){$('lead').textContent='Não foi possível carregar o post. Tente de novo em instantes.'});
+})();
+</script>
+</body></html>
