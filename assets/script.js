@@ -138,6 +138,7 @@
     ].filter(l => l !== null).join('\n');
 
     const waUrl = `https://wa.me/${WA}?text=${encodeURIComponent(texto)}`;
+    if (window.csConta) window.csConta('formulario', 'diagnóstico');
 
     // Abre direto na mesma aba (links wa.me funcionam bem assim e não caem em
     // bloqueio de pop-up). Se o navegador insistir, o aviso abaixo traz o número.
@@ -159,3 +160,28 @@
   }
 })();
 
+
+// Medição anônima de contatos: conta cliques no WhatsApp e envios do formulário de diagnóstico.
+// Não guarda nome, telefone, e-mail nem IP: só página, tipo de clique, texto do botão e origem da visita.
+(function () {
+  const API = 'https://zjktgygkiktjlgjuyglt.supabase.co/functions/v1/clique';
+  let origem = '';
+  try {
+    const q = new URLSearchParams(location.search);
+    const utm = q.get('utm_source');
+    const ref = document.referrer ? new URL(document.referrer).hostname.replace(/^www\./, '') : '';
+    origem = utm || (ref && ref !== location.hostname.replace(/^www\./, '') ? ref : '');
+    if (origem) sessionStorage.setItem('cs_origem', origem); else origem = sessionStorage.getItem('cs_origem') || 'direto';
+  } catch (e) { origem = origem || 'direto'; }
+  window.csConta = function (alvo, rotulo) {
+    try {
+      const body = JSON.stringify({ alvo: alvo, pagina: location.pathname, rotulo: String(rotulo || '').trim().slice(0, 80), origem: origem });
+      if (navigator.sendBeacon) navigator.sendBeacon(API, new Blob([body], { type: 'text/plain' }));
+      else fetch(API, { method: 'POST', body: body, keepalive: true, mode: 'no-cors' });
+    } catch (e) { /* medição nunca atrapalha o clique */ }
+  };
+  document.addEventListener('click', function (e) {
+    const a = e.target.closest && e.target.closest('a[href*="wa.me/"]');
+    if (a) window.csConta('whatsapp', a.getAttribute('aria-label') || a.textContent);
+  }, true);
+})();
