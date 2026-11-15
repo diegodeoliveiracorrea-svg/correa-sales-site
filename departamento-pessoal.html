@@ -32,7 +32,7 @@
   .form-status { margin-top:20px; padding:14px 18px; background:rgba(176,138,87,0.1); color:var(--gold-3); border-left:3px solid var(--gold); border-radius:var(--radius-sm); font-size:0.92rem; display:none; }
   .form-status.show { display:block; }
   .svc-form { display:grid; grid-template-columns:minmax(0,1.3fr) minmax(0,1fr); gap:48px; align-items:start; }
-  @media (max-width:900px){ .svc-form { grid-template-columns:1fr; gap:32px; } }
+  @media (max-width:900px){ .svc-form { grid-template-columns:minmax(0,1fr); gap:32px; } .form-grid { grid-template-columns:minmax(0,1fr); } .form-field select, .form-field input { max-width:100%; min-width:0; } }
   .svc-list { list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:12px; }
   .svc-list li { padding-left:22px; position:relative; }
   .svc-list li::before { content:''; position:absolute; left:0; top:11px; width:10px; height:2px; background:var(--gold); }
@@ -159,8 +159,8 @@
 </section>
 <section class="section-tight">
   <div class="container">
-    <div class="city-links reveal"><span style="color:var(--graphite-2);margin-right:6px">Outros serviços:</span><a href="abertura-de-empresa.html">Abertura de empresa</a><a href="contabilidade-para-mei.html">Contabilidade para MEI</a><a href="imposto-de-renda.html">Imposto de Renda</a></div>
-    <div class="city-links reveal" style="margin-top:12px"><span style="color:var(--graphite-2);margin-right:6px">Onde atendemos:</span><a href="contabilidade-baixada-fluminense.html">Baixada Fluminense</a><a href="contabilidade-rio-de-janeiro.html">Cidade do Rio de Janeiro</a></div>
+    <div class="city-links reveal"><span style="color:var(--graphite-2);margin-right:6px">Outros serviços:</span><a href="abertura-de-empresa.html">Abertura de empresa</a><a href="contabilidade-para-mei.html">Contabilidade para MEI</a><a href="imposto-de-renda.html">Imposto de Renda</a><a href="trocar-de-contador.html">Trocar de contador</a></div>
+    <div class="city-links reveal" style="margin-top:12px"><span style="color:var(--graphite-2);margin-right:6px">Onde atendemos:</span><a href="contabilidade-baixada-fluminense.html">Baixada Fluminense</a><a href="contabilidade-sao-joao-de-meriti.html">São João de Meriti</a><a href="contabilidade-duque-de-caxias.html">Duque de Caxias</a><a href="contabilidade-belford-roxo.html">Belford Roxo</a><a href="contabilidade-rio-de-janeiro.html">Cidade do Rio de Janeiro</a></div>
   </div>
 </section>
 <footer class="site-footer">
