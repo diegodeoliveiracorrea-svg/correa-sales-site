@@ -231,7 +231,24 @@
     atualizado: '17/11/2026'
   };
   try {
-    if (location.pathname.endsWith('/' + BOLETIM.url)) return;
+    const path = location.pathname;
+    const ehBoletim = /\/boletim-semanal-[^/]+\.html$/.test(path);
+    const ehAtual = path.endsWith('/' + BOLETIM.url);
+    // Edição antiga: aviso no topo do texto apontando para a mais recente.
+    if (ehBoletim && !ehAtual) {
+      const art = document.querySelector('article.art');
+      const meta = art && art.querySelector('.meta');
+      const dt = meta ? (meta.textContent.match(/Edição de (\d{2}\/\d{2}\/\d{4})/) || [])[1] : '';
+      if (art) {
+        const av = document.createElement('div');
+        av.setAttribute('role', 'note');
+        av.style.cssText = 'border-left:3px solid var(--gold,#B08A57);background:var(--off,#F6F2EB);padding:14px 18px;border-radius:0 8px 8px 0;margin:0 0 24px;font-size:.95rem;line-height:1.5';
+        av.innerHTML = '<strong style="color:var(--navy,#102742)">Esta edição é ' + (dt ? 'de ' + dt : 'antiga') + '.</strong> Algumas informações podem ter mudado. ' +
+          '<a href="' + BOLETIM.url + '" style="color:var(--gold-3,#8a6a3f);font-weight:600">Veja o boletim mais recente (nº ' + BOLETIM.edicao + ', atualizado em ' + BOLETIM.atualizado + ') →</a>';
+        art.insertBefore(av, art.firstChild);
+      }
+    }
+    if (ehAtual) return;
     const chave = 'cs-faixa-boletim-' + BOLETIM.edicao;
     try { if (localStorage.getItem(chave) === 'fechada') return; } catch (e) {}
     const st = document.createElement('style');
