@@ -219,3 +219,51 @@
     if (conta) conta(alvo, rotulo);
   };
 })();
+
+// Faixa do Boletim Corrêa Sales (topo de todas as páginas).
+// A CADA EDIÇÃO: atualize só este bloco (número, título, endereço e data da última atualização).
+(function () {
+  const BOLETIM = {
+    edicao: 1,
+    titulo: 'O que mudou para a sua empresa na semana de 16 a 20/11',
+    curto: 'O que mudou para a sua empresa esta semana',
+    url: 'boletim-semanal-16-a-20-novembro-2026.html',
+    atualizado: '17/11/2026'
+  };
+  try {
+    if (location.pathname.endsWith('/' + BOLETIM.url)) return;
+    const chave = 'cs-faixa-boletim-' + BOLETIM.edicao;
+    try { if (localStorage.getItem(chave) === 'fechada') return; } catch (e) {}
+    const st = document.createElement('style');
+    st.textContent =
+      '.faixa-boletim{background:var(--navy,#102742);color:#fff;font-size:.86rem;line-height:1.4}' +
+      '.faixa-boletim .fb-in{max-width:1200px;margin:0 auto;padding:9px 48px 9px 24px;display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap;position:relative}' +
+      '.faixa-boletim .fb-tag{font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold,#B08A57);font-weight:600;white-space:nowrap}' +
+      '.faixa-boletim a.fb-link{color:#fff;text-decoration:none;font-weight:500}' +
+      '.faixa-boletim a.fb-link:hover .fb-tit{text-decoration:underline}' +
+      '.faixa-boletim .fb-cta{color:var(--gold,#B08A57);font-weight:600;margin-left:6px;white-space:nowrap}' +
+      '.faixa-boletim .fb-data{color:rgba(255,255,255,.62);font-size:.78rem;white-space:nowrap}' +
+      '.faixa-boletim .fb-x{position:absolute;right:14px;top:50%;transform:translateY(-50%);background:none;border:0;color:rgba(255,255,255,.6);font-size:1.15rem;cursor:pointer;padding:4px 8px;line-height:1}' +
+      '.faixa-boletim .fb-x:hover{color:#fff}' +
+      '.faixa-boletim .fb-curto{display:none}' +
+      '@media (max-width:640px){.faixa-boletim .fb-in{gap:4px 10px;padding:8px 40px 8px 16px;justify-content:flex-start}.faixa-boletim .fb-tit{display:none}.faixa-boletim .fb-curto{display:inline}.faixa-boletim .fb-data{width:100%}}';
+    document.head.appendChild(st);
+    const f = document.createElement('div');
+    f.className = 'faixa-boletim';
+    f.setAttribute('role', 'region');
+    f.setAttribute('aria-label', 'Boletim da semana');
+    f.innerHTML =
+      '<div class="fb-in">' +
+      '<span class="fb-tag">Boletim nº ' + BOLETIM.edicao + '</span>' +
+      '<a class="fb-link" href="' + BOLETIM.url + '"><span class="fb-tit">' + BOLETIM.titulo + '</span>' +
+      '<span class="fb-curto">' + BOLETIM.curto + '</span><span class="fb-cta">Ler →</span></a>' +
+      '<span class="fb-data">Atualizado em ' + BOLETIM.atualizado + '</span>' +
+      '<button class="fb-x" type="button" aria-label="Fechar aviso do boletim">×</button>' +
+      '</div>';
+    f.querySelector('.fb-x').addEventListener('click', function () {
+      f.remove();
+      try { localStorage.setItem(chave, 'fechada'); } catch (e) {}
+    });
+    document.body.insertBefore(f, document.body.firstChild);
+  } catch (e) { /* a faixa nunca atrapalha a página */ }
+})();
