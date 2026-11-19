@@ -228,7 +228,7 @@
     titulo: 'O que mudou para a sua empresa na semana de 16 a 20/11',
     curto: 'O que mudou para a sua empresa esta semana',
     url: 'boletim-semanal-16-a-20-novembro-2026.html',
-    atualizado: '17/11/2026'
+    atualizado: '19/11/2026'
   };
   try {
     const path = location.pathname;
