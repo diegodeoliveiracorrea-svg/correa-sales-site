@@ -37,7 +37,7 @@ pre{white-space:pre-wrap;overflow-wrap:anywhere;font-family:inherit;font-size:.9
   <button class="ok" id="bOk">Aprovar e agendar</button>
   <button class="no" id="bNo">Não publicar</button>
 </div>
-<p class="small">Página interna da Corrêa Sales. Ao aprovar, o post sai sozinho no dia e hora indicados. Para pedir ajuste, não aprove: mande a mudança ao Claude.</p>
+<p class="small">Página interna da Corrêa Sales. O post sai sozinho no dia e hora indicados, mesmo sem aprovação. Para não publicar, toque em “Não publicar” antes desse horário. Para pedir ajuste, mande a mudança ao Claude.</p>
 </div>
 <script>
 (function(){
@@ -59,8 +59,9 @@ pre{white-space:pre-wrap;overflow-wrap:anywhere;font-family:inherit;font-size:.9
         +(m?'<div class="strip">'+m+'</div>':'')+(p.texto?'<pre>'+esc(p.texto)+'</pre>':'')+'</article>';
     }).join('');
     var pend=itens.some(function(p){return p.status==='rascunho'});
-    $('acts').hidden=!pend;
-    if(!pend) aviso('Este post já foi decidido: '+itens.map(function(p){return (REDE[p.rede]||p.rede)+' '+(ST[p.status]||p.status).toLowerCase()}).join(' · ')+'.',true);
+    var podeRecusar=itens.some(function(p){return p.status==='rascunho'||p.status==='aprovado'});
+    $('acts').hidden=!podeRecusar; $('bOk').hidden=!pend;
+    if(!podeRecusar) aviso('Este post já foi decidido: '+itens.map(function(p){return (REDE[p.rede]||p.rede)+' '+(ST[p.status]||p.status).toLowerCase()}).join(' · ')+'.',true);
   }
   function decidir(acao){
     if(acao==='recusar'&&!confirm('Não publicar este post?'))return;
