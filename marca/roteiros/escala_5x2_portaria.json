@@ -1,0 +1,19 @@
+{"nome":"escala_5x2_portaria","paleta":"padrao","rodape_final":"Salve e envie para quem tem funcionário",
+"cards":[
+{"tipo":"capa","fundo":"escuro","tag":"Escala 5x2 · Saiu a portaria","titulo":"Tem funcionário? <em>Saíram as regras práticas.</em>","texto":"A Portaria MTE nº 2.041 (DOU de 23/11) completa o decreto e diz como fica o dia a dia da sua empresa a partir de 16/12."},
+{"tipo":"conteudo","fundo":"claro","tag":"As folgas","titulo":"2 folgas de 24h <em>toda semana.</em>","blocos":[
+ {"caixa":"Regra geral","texto":"Dois repousos de <b>24 horas seguidas</b> por semana, um deles <b>de preferência no domingo</b>. Podem ser seguidos ou separados."},
+ {"caixa_dourada":"Trabalhou na folga?","texto":"Paga <b>em dobro</b>, salvo folga compensatória na mesma semana."}]},
+{"tipo":"conteudo","fundo":"escuro","tag":"Domingo","titulo":"Quantas vezes a folga <em>cai no domingo.</em>","blocos":[
+ {"tabela":[["Comércio","Ao menos 1 a cada 3 semanas"],["Demais atividades (homens)","Ao menos 1 a cada 4 semanas"]]},
+ {"nota":"Para as mulheres, vale a regra própria da CLT (art. 386)."}]},
+{"tipo":"conteudo","fundo":"claro","tag":"Jornada","titulo":"Até 42h por semana <em>e 8h por dia.</em>","blocos":[
+ {"tabela":[["16/12/2026 a 15/12/2027","Até 42h por semana"],["A partir de 16/12/2027","Até 40h por semana"],["Por dia","Até 8 horas"]]},
+ {"nota":"O salário do mês não pode ser reduzido."}]},
+{"tipo":"conteudo","fundo":"escuro","tag":"Convenção ou acordo","titulo":"Folga fora da semana <em>só com o sindicato.</em>","blocos":[
+ {"caixa":"Com convenção ou acordo coletivo","texto":"A compensação pode garantir os 2 dias de folga <b>na média do mês</b>, com no máximo 6 dias seguidos de trabalho."}]},
+{"tipo":"conteudo","fundo":"claro","tag":"Faz a conta","titulo":"A hora <em>fica mais cara.</em>","blocos":[
+ {"tabela":[["Salário de R$ 3.000: hora hoje","R$ 13,64"],["A partir de 16/12","R$ 14,29"],["Hora extra de 50%: de","R$ 20,45 para R$ 21,43"]]},
+ {"nota":"Monte a escala de dezembro com as 2 folgas, confira a convenção e recalcule hora extra e comissões."}]},
+{"tipo":"cta","titulo":"Quer ajuda para <em>ajustar a sua empresa?</em>","texto":"Vale para toda empresa com empregado, inclusive MEI. A Corrêa Sales monta a escala e confere a folha de dezembro.","botao":"MANDA DIAGNÓSTICO NO DIRECT"}
+]}

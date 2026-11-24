@@ -1,0 +1,14 @@
+{"nome":"mei_nota_2027","paleta":"padrao","rodape_final":"Salve e envie para quem tem MEI",
+"cards":[
+{"tipo":"capa","fundo":"escuro","tag":"MEI · 2027","titulo":"Vende para pessoa física? <em>Sua declaração anual pode valer como nota.</em>","texto":"A partir de 1º de janeiro de 2027, a DASN-Simei poderá ser usada como documento fiscal nas vendas a consumidor pessoa física."},
+{"tipo":"conteudo","fundo":"claro","tag":"Quando vale","titulo":"Depende de <em>quem compra.</em>","blocos":[
+ {"tabela":[["Cliente pessoa física, sem CNPJ","DASN-Simei pode servir de documento"],["Cliente com CNPJ, inclusive outro MEI","Continua a nota fiscal"]]}]},
+{"tipo":"conteudo","fundo":"escuro","tag":"O que não muda","titulo":"As obrigações <em>continuam.</em>","blocos":[
+ {"tabela":[["DAS","Todo mês"],["DASN-Simei","Todo ano, inclusive as atrasadas"]]}]},
+{"tipo":"conteudo","fundo":"claro","tag":"Atenção","titulo":"O faturamento declarado <em>precisa estar certo.</em>","blocos":[
+ {"caixa_dourada":"Por quê","texto":"Se a declaração passa a contar como documento das suas vendas, <b>o valor informado nela precisa bater</b> com o que você vendeu."},
+ {"nota":"Base: Resolução CGSN nº 195/2026 (DOU de 22/10/2026), art. 106-C da Resolução CGSN nº 140/2018."}]},
+{"tipo":"conteudo","fundo":"escuro","tag":"Antes de janeiro","titulo":"Organize <em>as vendas do mês.</em>","blocos":[
+ {"tabela":[["1","Separe vendas para pessoa física e para empresa"],["2","Anote quanto entrou em cada tipo, todo mês"],["3","Siga emitindo nota para empresa"],["4","Fique de olho no limite do MEI"]]}]},
+{"tipo":"cta","titulo":"Dúvida se <em>o seu caso</em> muda?","texto":"A Corrêa Sales confere as vendas do seu MEI e o que muda em 2027.","botao":"MANDA DIAGNÓSTICO NO DIRECT"}
+]}

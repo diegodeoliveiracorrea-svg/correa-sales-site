@@ -1,0 +1,18 @@
+{"nome":"escala_5x2_decreto","paleta":"padrao","rodape_final":"Salve e envie para quem tem funcionário",
+"cards":[
+{"tipo":"capa","fundo":"escuro","tag":"Escala 5x2 · Saiu o decreto","titulo":"Quem tem funcionário: <em>a hora fica mais cara</em> em 16/12.","texto":"O Decreto 13.173, de 19/11/2026, regulamentou o fim da escala 6x1. Veja o que muda na sua folha."},
+{"tipo":"conteudo","fundo":"claro","tag":"As datas","titulo":"Duas etapas, <em>sem reduzir salário.</em>","blocos":[
+ {"tabela":[["16/12/2026","42h por semana e 2 folgas"],["16/12/2027","40h por semana"],["Salário do mês","Não pode ser reduzido"]]}]},
+{"tipo":"conteudo","fundo":"escuro","tag":"Faz a conta","titulo":"O divisor cai de <em>220 para 210.</em>","blocos":[
+ {"tabela":[["Salário de R$ 3.000: hora hoje (÷220)","R$ 13,64"],["A partir de 16/12 (÷210)","R$ 14,29"],["Hora extra de 50%, hoje","R$ 20,45"],["Hora extra de 50%, em 16/12","R$ 21,43"]]},
+ {"nota":"Em 16/12/2027 o divisor passa para 200."}]},
+{"tipo":"conteudo","fundo":"claro","tag":"Regimes especiais","titulo":"A 12x36 <em>continua</em> permitida.","blocos":[
+ {"caixa":"12x36","texto":"Se a média do mês passar do novo limite, as horas a mais são <b>compensadas ou pagas como extra</b>, como definir a convenção ou o acordo coletivo."},
+ {"caixa_dourada":"Folga fora da semana","texto":"Só com <b>convenção ou acordo coletivo</b> com o sindicato."}]},
+{"tipo":"conteudo","fundo":"escuro","tag":"Convenção e STF","titulo":"Confira a convenção <em>da sua categoria.</em>","blocos":[
+ {"caixa":"Ministério do Trabalho","texto":"Cláusula de convenção incompatível com a nova jornada <b>perde a validade em 16/12</b>. A Portaria MTE 2.041, de 23/11, trouxe as regras complementares."},
+ {"caixa_dourada":"E o STF?","texto":"A liminar que mantém <b>16/12</b> segue valendo. O julgamento final ainda não tem data."}]},
+{"tipo":"conteudo","fundo":"claro","tag":"O que fazer esta semana","titulo":"5 passos <em>antes de 16/12.</em>","blocos":[
+ {"tabela":[["1","Liste quem trabalha 6x1 ou 44h"],["2","Refaça a escala com 42h e 2 folgas"],["3","Atualize o divisor no sistema da folha"],["4","Leia a convenção da sua categoria"],["5","Recalcule hora extra e adicional noturno"]]}]},
+{"tipo":"cta","titulo":"Sua folha de dezembro <em>já está no novo cálculo?</em>","texto":"A Corrêa Sales confere escala, divisor e horas extras da sua empresa.","botao":"MANDA DIAGNÓSTICO NO DIRECT"}
+]}
