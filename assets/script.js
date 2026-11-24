@@ -224,11 +224,11 @@
 // A CADA EDIÇÃO: atualize só este bloco (número, título, endereço e data da última atualização).
 (function () {
   const BOLETIM = {
-    edicao: 1,
-    titulo: 'O que mudou para a sua empresa na semana de 16 a 20/11',
+    edicao: 2,
+    titulo: 'O que mudou para a sua empresa na semana de 23 a 27/11',
     curto: 'O que mudou para a sua empresa esta semana',
-    url: 'boletim-semanal-16-a-20-novembro-2026.html',
-    atualizado: '17/11/2026'
+    url: 'boletim-semanal-23-a-27-novembro-2026.html',
+    atualizado: '24/11/2026'
   };
   try {
     const path = location.pathname;
