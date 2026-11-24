@@ -1,0 +1,77 @@
+<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow"><meta name="referrer" content="no-referrer">
+<title>Para compartilhar | Corrêa Sales</title>
+<link rel="icon" href="../favicon.png">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#102742;--gold:#B08A57;--off:#F6F2EB;--g:#4A4F57;--b:rgba(74,79,87,.16)}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Inter,system-ui,sans-serif;color:var(--g);background:var(--off);line-height:1.5}
+.wrap{max-width:560px;margin:0 auto;padding:28px 16px 60px}
+.top{margin-bottom:22px} .top img{height:46px}
+h1{font-family:'Instrument Serif',serif;font-weight:400;color:var(--navy);font-size:2rem;line-height:1.1}
+.lead{margin:10px 0 18px}
+.card{background:#fff;border:1px solid var(--b);border-radius:14px;padding:16px;margin-bottom:16px}
+.card img{width:100%;max-width:320px;display:block;margin:0 auto;border-radius:10px;border:1px solid var(--b)}
+pre{white-space:pre-wrap;overflow-wrap:anywhere;font-family:inherit;font-size:.92rem;background:var(--off);padding:12px;border-radius:8px}
+.passo{font-size:.78rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#8f6f42;margin-bottom:8px}
+.bts{display:flex;flex-direction:column;gap:10px;margin-top:12px}
+.bts a,.bts button{display:block;text-align:center;font:inherit;font-weight:600;padding:14px;border-radius:10px;cursor:pointer;border:0;text-decoration:none}
+.wa{background:#1f8f4e;color:#fff} .sec{background:#fff;border:1.5px solid var(--gold)!important;color:#8f6f42}
+.msg{padding:12px;border-radius:10px;margin-top:10px;background:#E7EFE3;color:#3E6B37;font-weight:500;display:none}
+.small{font-size:.8rem;color:#6b7079;margin-top:18px}
+</style></head>
+<body><div class="wrap">
+<div class="top"><img src="../logo-light-bg.png" alt="Corrêa Sales"></div>
+<h1>Para compartilhar</h1>
+<p class="lead" id="lead">Carregando…</p>
+<div id="conteudo" hidden>
+  <div class="card">
+    <div class="passo">1 · Status do WhatsApp e stories</div>
+    <img id="img" alt="Card para compartilhar">
+    <div class="bts">
+      <button class="wa" id="bShare" hidden>Compartilhar imagem e mensagem</button>
+      <a class="sec" id="bImg" download>Baixar a imagem</a>
+    </div>
+  </div>
+  <div class="card">
+    <div class="passo">2 · Mensagem para clientes e grupos</div>
+    <pre id="txt"></pre>
+    <div class="bts">
+      <a class="wa" id="bWa" target="_blank" rel="noopener">Enviar no WhatsApp</a>
+      <button class="sec" id="bCopy">Copiar mensagem</button>
+    </div>
+    <div class="msg" id="ok">Mensagem copiada.</div>
+  </div>
+  <p class="small">Dica: poste a imagem no status no dia do post e mande a mensagem para os clientes e para 2 ou 3 grupos de empresários. Quem tocar no link cai no site, e o relatório diário conta esses acessos.</p>
+</div>
+</div>
+<script>
+(function(){
+  var $=function(id){return document.getElementById(id)};
+  var p=(new URLSearchParams(location.search).get('p')||'').replace(/[^a-z0-9_-]/gi,'');
+  if(!p){$('lead').textContent='Link incompleto. Abra o link que veio no e-mail.';return}
+  fetch('compartilhar/'+p+'.json',{cache:'no-store'}).then(function(r){if(!r.ok)throw 0;return r.json()}).then(function(d){
+    $('lead').textContent=d.titulo;
+    $('img').src=d.imagem; $('bImg').href=d.imagem;
+    $('txt').textContent=d.texto;
+    $('bWa').href='https://wa.me/?text='+encodeURIComponent(d.texto);
+    $('bCopy').onclick=function(){
+      (navigator.clipboard?navigator.clipboard.writeText(d.texto):Promise.reject()).then(function(){$('ok').style.display='block'})
+      .catch(function(){var t=document.createElement('textarea');t.value=d.texto;document.body.appendChild(t);t.select();try{document.execCommand('copy');$('ok').style.display='block'}catch(e){}t.remove()});
+    };
+    // Celular: compartilha a imagem e a mensagem direto (WhatsApp, status, stories)
+    if(navigator.canShare){
+      fetch(d.imagem).then(function(r){return r.blob()}).then(function(b){
+        var f=new File([b],p+'.jpg',{type:'image/jpeg'});
+        if(navigator.canShare({files:[f]})){
+          $('bShare').hidden=false;
+          $('bShare').onclick=function(){navigator.share({files:[f],text:d.texto}).catch(function(){})};
+        }
+      }).catch(function(){});
+    }
+    $('conteudo').hidden=false;
+  }).catch(function(){$('lead').textContent='Não encontramos este material. Peça o link de novo ao Claude.'});
+})();
+</script>
+</body></html>
