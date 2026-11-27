@@ -47,6 +47,18 @@ python3 marca/carrossel.py roteiro.json pasta_de_saida/
 O roteiro segue o formato descrito no topo de `carrossel.py`. Exemplo completo: `marca/exemplos/perdao_mei.json` (post de 05/11/2026).
 O script avisa se algum texto passou do espaço. Depois de gerar, confira cada imagem antes de enviar para aprovação.
 
+## 5a. Reels narrados (1080 x 1920, até 30 s)
+
+```
+python3 marca/reels.py roteiro.json --texto                 # texto para a voz no ElevenLabs
+python3 marca/reels.py roteiro.json saida/ --audio voz.mp3  # vídeo final
+```
+
+- Mesmo padrão dos carrosséis: logo oficial, Cormorant Garamond com destaque em itálico dourado, Montserrat, paleta `padrao`, fundo escuro e claro alternados, card final com "MANDA DIAGNÓSTICO NO DIRECT".
+- Voz: ElevenLabs, "Paulo Rovéglia - Jovem Carioca" (voice_id cYJOoH13XCtPQ5VT5HAE), modelo eleven_v4, 1 versão por vídeo.
+- O script acha as pausas da narração e troca de cena nelas. Exemplo: `marca/roteiros/escala_5x2_reels.json`.
+- A narração (MP3) chega pela pasta do Google Drive "Reels · narração (Corrêa Sales)", com o nome `<nome do roteiro>.mp3`.
+
 ## 6. Regras de publicação
 
 - Nada é publicado ou agendado sem aprovação do Diego ou da Tatiana.

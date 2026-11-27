@@ -1,0 +1,29 @@
+{
+  "nome": "escala_5x2_reels",
+  "cenas": [
+    {"tipo": "capa", "fundo": "escuro", "tag": "Escala 5x2 · 16 de dezembro",
+     "titulo": "Tem funcionário?<br>A hora de trabalho vai <em>ficar mais cara.</em>",
+     "caixa": {"rotulo": "Faltam", "contar": 20, "sufixo": " dias", "nota": "até 16/12/2026"},
+     "fala": "Tem funcionário? A partir de 16 de dezembro, a hora de trabalho fica mais cara."},
+    {"tipo": "tabela", "fundo": "escuro", "tag": "A nova escala", "titulo": "Duas folgas <em>por semana.</em>",
+     "linhas": [["Folgas por semana", "2"], ["Jornada máxima", "42 horas"], ["A partir de 16/12/2027", "40 horas"]],
+     "fala": "A escala seis por um acaba: são duas folgas por semana e no máximo 42 horas."},
+    {"tipo": "valor", "fundo": "claro", "tag": "Salário de R$ 3.000", "titulo": "O salário não muda.<br>O valor da hora <em>sobe.</em>",
+     "rotulo": "Valor da hora normal", "de": 13.64, "para": 14.29, "formato": "moeda", "selo": "+4,8%",
+     "nota": "Divisor da folha: de 220 para 210",
+     "fala": "O salário não muda, mas a hora sobe. Com salário de três mil, vai de treze e sessenta e quatro para quatorze e vinte e nove."},
+    {"tipo": "valor", "fundo": "escuro", "tag": "Hora extra de 50%", "titulo": "A hora extra também <em>fica mais cara.</em>",
+     "rotulo": "Valor da hora extra", "de": 20.45, "para": 21.43, "formato": "moeda", "selo": "+4,8%", "dourado": true,
+     "nota": "Exemplo com salário de R$ 3.000.",
+     "fala": "E a hora extra vai de vinte e quarenta e cinco para vinte e um e quarenta e três."},
+    {"tipo": "lista", "fundo": "claro", "tag": "O que fazer agora", "titulo": "Prepare a sua empresa <em>ainda este ano.</em>",
+     "itens": ["Refaça a escala de dezembro", "Confira a convenção do seu sindicato", "Recalcule hora extra e comissões na folha"],
+     "nota": "Vale para toda empresa com empregado, inclusive MEI.",
+     "fala": "Refaça a escala, confira a convenção do sindicato e recalcule a folha."},
+    {"tipo": "cta", "titulo": "Quer ajuda para <em>ajustar a sua empresa?</em>",
+     "texto": "A Corrêa Sales monta a escala e confere a folha de dezembro.",
+     "botao": "MANDA DIAGNÓSTICO NO DIRECT",
+     "base": "Base: EC 141/2026, Decreto 13.173/2026 e Portaria MTE 2.041/2026. Conteúdo informativo, não substitui a análise do seu caso.",
+     "fala": "Quer ajuda? Manda DIAGNÓSTICO no direct da Corrêa Sales."}
+  ]
+}
