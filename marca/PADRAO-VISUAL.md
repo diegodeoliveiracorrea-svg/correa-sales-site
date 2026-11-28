@@ -2,6 +2,22 @@
 
 Este é o padrão oficial dos posts. Qualquer pessoa ou agente que for criar arte segue este arquivo.
 
+<!-- DIRETRIZES-INICIO -->
+## 0. Diretrizes de conteúdo da semana (Líder de marketing, 28/11/2026)
+
+Valem para posts, cards de compartilhar e Reels. Atualizadas toda segunda pela rotina "Líder de marketing".
+
+- Público da semana: quem tem funcionário (13º, escala 5x2 em 16/12) e empresas do Simples e do Lucro Presumido se preparando para 2027. MEI no máximo 1 vez.
+- O que rende: post prático com data e dia da semana, ou com a conta em reais, e uma ação clara para o dono ("o que fazer esta semana"). Disputa na Justiça e alíquota sem ação para o dono rendem pouco.
+- Gancho: 1ª linha e capa falam com o dono na 2ª pessoa e citam o público ("Tem funcionário?", "Sua empresa no Simples"). Sem siglas na capa.
+- Toda peça pede envio ou salvamento e tem o card de compartilhar com mensagem para o WhatsApp. O alcance cresce quando o post circula fora do Instagram.
+- Busca e IA: o texto responde a pergunta do dono logo no começo (quem, o quê, até quando), com o nome da cidade quando fizer sentido. É o formato que o Google e as IAs citam.
+- Horário: posts às 12h; Reels às 18h30.
+- Reels da semana: 13º e escala 5x2 em dezembro. Gancho de 3 s: "Dezembro vai custar mais para quem tem funcionário." Cenas: as 2 datas do 13º; a hora mais cara a partir de 16/12; o que fazer esta semana.
+- Teste da semana: comparar o alcance dos posts com e sem compartilhamento no status do WhatsApp pelos sócios.
+- Evitar: superlativos, promessas, preços e comparação com outros escritórios (NBC PG 01).
+<!-- DIRETRIZES-FIM -->
+
 ## 1. Logo (regra que não muda)
 
 - Use **somente** os arquivos oficiais. Nunca redesenhe, digite ou recrie a logo (nada de "CS" escrito em fonte).
