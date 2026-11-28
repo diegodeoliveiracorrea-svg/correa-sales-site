@@ -13,7 +13,7 @@ Valem para posts, cards de compartilhar e Reels. Atualizadas toda segunda pela r
 - Toda peça pede envio ou salvamento e tem o card de compartilhar com mensagem para o WhatsApp. O alcance cresce quando o post circula fora do Instagram.
 - Busca e IA: o texto responde a pergunta do dono logo no começo (quem, o quê, até quando), com o nome da cidade quando fizer sentido. É o formato que o Google e as IAs citam.
 - Horário: posts às 12h; Reels às 18h30.
-- Reels da semana: 13º e escala 5x2 em dezembro. Gancho de 3 s: "Dezembro vai custar mais para quem tem funcionário." Cenas: as 2 datas do 13º; a hora mais cara a partir de 16/12; o que fazer esta semana.
+- Reels da semana (sai na quinta, 03/12; não repete o Reels da escala 5x2): 2ª parcela do 13º. Gancho de 3 s: "A 2ª parcela do 13º vence antes do dia 20." Cenas: prazo até sexta, 18/12, porque o dia 20 cai num domingo; INSS e IR descontados nessa parcela; demissão em dezembro: FGTS do 13º junto com a rescisão.
 - Teste da semana: comparar o alcance dos posts com e sem compartilhamento no status do WhatsApp pelos sócios.
 - Evitar: superlativos, promessas, preços e comparação com outros escritórios (NBC PG 01).
 <!-- DIRETRIZES-FIM -->
